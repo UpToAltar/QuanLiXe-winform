@@ -1,4 +1,5 @@
-﻿using QuanLiXe.Services;
+﻿using DevExpress.XtraEditors;
+using QuanLiXe.Services;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -33,6 +34,14 @@ namespace QuanLiXe.Helper
         private ValidateHelper() { }
 
         public bool ValidateEmptyTextBox(List<TextBox> list)
+        {
+            foreach (var item in list)
+            {
+                if (item.Text == "") return false;
+            }
+            return true;
+        }
+        public bool ValidateEmptyTextEdit(List<TextEdit> list)
         {
             foreach (var item in list)
             {

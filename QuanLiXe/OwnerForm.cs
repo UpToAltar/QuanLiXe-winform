@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Columns;
 using QuanLiXe.Helper;
 using QuanLiXe.Services;
 using System;
@@ -23,6 +24,15 @@ namespace QuanLiXe
 
         void LoadData()
         {
+            var gridId = new GridColumn() { Caption = "ID", Visible = true, FieldName = "OwnerId" };
+            var gridFullName = new GridColumn() { Caption = "Tên đầy đủ", Visible = true, FieldName = "FullName" };
+            var gridEmail = new GridColumn() { Caption = "Email", Visible = true, FieldName = "Email" };
+            var gridPhoneNumber = new GridColumn() { Caption = "Số điện thoại", Visible = true, FieldName = "PhoneNumber" };
+            var gridAddress = new GridColumn() { Caption = "Địa chỉ", Visible = true, FieldName = "Address" };
+
+            gridViewOwner.Columns.Clear();
+            gridViewOwner.Columns.AddRange(new GridColumn[] { gridId, gridFullName, gridEmail, gridPhoneNumber, gridAddress });
+
             dataGridViewOwner.DataSource = OwnerServices.Instance.Load();
         }
 
@@ -56,8 +66,8 @@ namespace QuanLiXe
             else
             {
                 //Create
-                string query = $"INSERT INTO Owners (FullName, Email, Address, PhoneNumber) VALUES (N'{tbOwnerFullName.Text}', N'{tbOwnerEmail.Text}', N'{tbOwnerAddress.Text}', N'{tbOwnerPhoneNumer.Text}' )";
-                if (OwnerServices.Instance.GetSuccessQuery(query))
+                
+                if (OwnerServices.Instance.CreateOwner(tbOwnerFullName.Text,tbOwnerEmail.Text,tbOwnerPhoneNumer.Text,tbOwnerAddress.Text))
                 {
                     MessageBox.Show("Thêm người sở hữu xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
@@ -118,12 +128,8 @@ namespace QuanLiXe
             }
             else
             {
-                //Create
-                string query = $"UPDATE Owners SET FullName = N'{tbOwnerFullName.Text}', " +
-                    $"Email = N'{tbOwnerEmail.Text}', Address = N'{tbOwnerAddress.Text}', " +
-                    $"PhoneNumber = N'{tbOwnerPhoneNumer.Text}'" +
-                    $" WHERE OwnerId = {tbOwnerId.Text};";
-                if (OwnerServices.Instance.GetSuccessQuery(query))
+                //Update
+                if (OwnerServices.Instance.UpdateOwner(tbOwnerId.Text,tbOwnerFullName.Text,tbOwnerEmail.Text,tbOwnerPhoneNumer.Text,tbOwnerAddress.Text))
                 {
                     MessageBox.Show("Cập nhật người sở hữu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
@@ -151,9 +157,9 @@ namespace QuanLiXe
             }
             else
             {
-                //Create
-                string query = $"DELETE FROM Owners WHERE OwnerId = {tbOwnerId.Text};";
-                if (OwnerServices.Instance.GetSuccessQuery(query))
+                //Delete
+                
+                if (OwnerServices.Instance.DeleteOwner(tbOwnerId.Text))
                 {
                     MessageBox.Show("Xóa người sở hữu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();

@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Columns;
 using QuanLiXe.Helper;
 using QuanLiXe.Services;
 using System;
@@ -22,6 +23,18 @@ namespace QuanLiXe
         }
         void LoadData()
         {
+            var gridId = new GridColumn() { Caption = "ID", Visible = true, FieldName = "ID" };
+            var gridUserName = new GridColumn() { Caption = "Tên đăng nhập", Visible = true, FieldName = "UserName" };
+            var gridPassword = new GridColumn() { Caption = "Mật khẩu", Visible = true, FieldName = "Password" };
+            var gridDisplayName = new GridColumn() { Caption = "Tên hiển thị", Visible = true, FieldName = "DisplayName" };
+            var gridImage = new GridColumn() { Caption = "Đường dẫn ảnh", Visible = true, FieldName = "Image" };
+            var gridRole = new GridColumn() { Caption = "Vai trò", Visible = true, FieldName = "Role" };
+
+            gridViewAccount.Columns.Clear();
+            gridViewAccount.Columns.AddRange(new GridColumn[] { gridId, gridUserName, gridPassword, gridDisplayName, gridRole,gridImage });
+
+
+
             dataGridViewAccount.DataSource = AccountServices.Instance.Load();
             if(tbAccountRole.Items.Count == 0 )
             {
@@ -79,11 +92,16 @@ namespace QuanLiXe
                 //Check name exist
                 MessageBox.Show("Tên đăng nhập đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (tbAccountImage.Text != "" && !ChechImageUrl.Instance.IsImageUrlValid(tbAccountImage.Text))
+            {
+                //Check name exist
+                MessageBox.Show("Đường dẫn ảnh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 //Create
-                string query = $"INSERT INTO Account (UserName, DisplayName, Password, Role) VALUES (N'{tbAccountUserName.Text}', N'{tbAccountDisplayName.Text}', N'{tbAccountPassword.Text}', N'{tbAccountRole.Text}' )";
-                if (AccountServices.Instance.GetSuccessQuery(query))
+                
+                if (AccountServices.Instance.CreateUser(tbAccountUserName.Text,tbAccountPassword.Text,tbAccountDisplayName.Text,tbAccountRole.Text,tbAccountImage.Text))
                 {
                     MessageBox.Show("Thêm người dùng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
@@ -123,14 +141,16 @@ namespace QuanLiXe
                 //Check name exist
                 MessageBox.Show("Tên đăng nhập đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (tbAccountImage.Text != "" && !ChechImageUrl.Instance.IsImageUrlValid(tbAccountImage.Text))
+            {
+                //Check name exist
+                MessageBox.Show("Đường dẫn ảnh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
-                //Create
-                string query = $"UPDATE Account SET UserName = N'{tbAccountUserName.Text}', " +
-                    $"DisplayName = N'{tbAccountDisplayName.Text}', Password = N'{tbAccountPassword.Text}', " +
-                    $"Role = N'{tbAccountRole.Text}'" +
-                    $" WHERE ID = {tbAccountId.Text};";
-                if (AccountServices.Instance.GetSuccessQuery(query))
+                //Update
+               
+                if (AccountServices.Instance.UpdateUser(tbAccountId.Text,tbAccountUserName.Text,tbAccountPassword.Text,tbAccountDisplayName.Text,tbAccountRole.Text,tbAccountImage.Text))
                 {
                     MessageBox.Show("Cập nhật người dùng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
@@ -158,9 +178,9 @@ namespace QuanLiXe
             }
             else
             {
-                //Create
-                string query = $"DELETE FROM Account WHERE ID = {tbAccountId.Text};";
-                if (AccountServices.Instance.GetSuccessQuery(query))
+                //Delete
+                
+                if (AccountServices.Instance.DeleteUser(tbAccountId.Text))
                 {
                     MessageBox.Show("Xóa người dùng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
@@ -182,6 +202,11 @@ namespace QuanLiXe
             {
                 MessageBox.Show("Xuất file thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

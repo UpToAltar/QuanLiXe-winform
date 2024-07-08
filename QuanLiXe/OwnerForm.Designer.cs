@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OwnerForm));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnExportExcelOwner = new DevExpress.XtraEditors.SimpleButton();
             this.dataGridViewOwner = new DevExpress.XtraGrid.GridControl();
             this.gridViewOwner = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tbOwnerPhoneNumer = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbOwnerId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnExportExcelOwner = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOwner)).BeginInit();
@@ -79,6 +79,19 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1175, 669);
             this.panelControl1.TabIndex = 1;
+            // 
+            // btnExportExcelOwner
+            // 
+            this.btnExportExcelOwner.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcelOwner.Appearance.Options.UseFont = true;
+            this.btnExportExcelOwner.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnExportExcelOwner.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExportExcelOwner.ImageOptions.SvgImage")));
+            this.btnExportExcelOwner.Location = new System.Drawing.Point(1001, 31);
+            this.btnExportExcelOwner.Name = "btnExportExcelOwner";
+            this.btnExportExcelOwner.Size = new System.Drawing.Size(169, 71);
+            this.btnExportExcelOwner.TabIndex = 18;
+            this.btnExportExcelOwner.Text = "Xuất file";
+            this.btnExportExcelOwner.Click += new System.EventHandler(this.btnExportExcelOwner_Click);
             // 
             // dataGridViewOwner
             // 
@@ -257,19 +270,6 @@
             this.label1.Size = new System.Drawing.Size(40, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "ID";
-            // 
-            // btnExportExcelOwner
-            // 
-            this.btnExportExcelOwner.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportExcelOwner.Appearance.Options.UseFont = true;
-            this.btnExportExcelOwner.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnExportExcelOwner.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExportExcelVehicles.ImageOptions.SvgImage")));
-            this.btnExportExcelOwner.Location = new System.Drawing.Point(1001, 31);
-            this.btnExportExcelOwner.Name = "btnExportExcelOwner";
-            this.btnExportExcelOwner.Size = new System.Drawing.Size(169, 71);
-            this.btnExportExcelOwner.TabIndex = 18;
-            this.btnExportExcelOwner.Text = "Xuất file";
-            this.btnExportExcelOwner.Click += new System.EventHandler(this.btnExportExcelOwner_Click);
             // 
             // OwnerForm
             // 

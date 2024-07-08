@@ -30,6 +30,8 @@ namespace QuanLiXe.Services
         }
 
         private AppDBContext() { }
+        string connectionStringUser = "Server=192.168.10.21,1468;Database=Intern_202406_V1;User Id=QuanDao;Password=QuanDao@123";
+
 
         public const string connectionStr = "data source=DESKTOP-5EA7F83\\SQLEXPRESS;initial catalog=QuanLiXe;trusted_connection=true";
         public DataTable GetDataFromQuery(string query)
@@ -37,7 +39,7 @@ namespace QuanLiXe.Services
 
             try
             {
-                SqlConnection connection = new SqlConnection(connectionStr);
+                SqlConnection connection = new SqlConnection(connectionStringUser);
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader data = command.ExecuteReader();
@@ -57,7 +59,7 @@ namespace QuanLiXe.Services
 
             try
             {
-                SqlConnection connection = new SqlConnection(connectionStr);
+                SqlConnection connection = new SqlConnection(connectionStringUser);
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader data = command.ExecuteReader();
@@ -75,7 +77,7 @@ namespace QuanLiXe.Services
         public int NonQuery(string query)
         {
             // Kết nối tới cơ sở dữ liệu
-            using (SqlConnection connection = new SqlConnection(connectionStr))
+            using (SqlConnection connection = new SqlConnection(connectionStringUser))
             {
                 try
                 {

@@ -31,7 +31,7 @@ namespace QuanLiXe.Services
 
         public bool CheckName(string name)
         {
-            string query = $"SELECT * FROM Manufactures WHERE Name = N'{name}'";
+            string query = $"EXEC GetManufacturesByName @Name = N'{name}'";
             var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
             if (data == 0)
             {
@@ -47,7 +47,7 @@ namespace QuanLiXe.Services
             {
                 return false;
             }
-            string query = $"SELECT * FROM Manufactures WHERE ManufacturesId = {id}";
+            string query = $"EXEC GetManufacturesById @Id = {id}";
             var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
             if (data == 0)
             {
@@ -56,17 +56,6 @@ namespace QuanLiXe.Services
             return true;
         }
 
-        public bool CheckFindByName(string name)
-        {
-            
-            string query = $"SELECT * FROM Manufactures WHERE Name = N'{name}'";
-            var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
-            if (data == 0)
-            {
-                return false;
-            }
-            return true;
-        }
 
         public bool GetSuccessQuery(string query)
         {
@@ -74,41 +63,48 @@ namespace QuanLiXe.Services
             return data > 0;
         }
 
+        public bool CreateAutomaker(string name, string icon)
+        {
+            string query = $"EXEC CreateManufacture @Name = N'{name}', @Icon = '{icon}'";
+            return GetSuccessQuery(query);
+        }
+
+        public bool UpdateAutomaker(string id, string name, string icon)
+        {
+            string query = $"EXEC UpdateManufacture @Name = N'{name}', @Icon = '{icon}', @Id = {id}";
+            return GetSuccessQuery(query);
+        }
+
+        public bool DeleteAutomaker(string id)
+        {
+            string query = $"EXEC DeleteManufactureById @Id = {id}";
+            return GetSuccessQuery(query);
+        }
+
         public DataTable Search(string name)
         {
             int id = 0;
             if (int.TryParse(name, out id))
             {
-                string query1 = $"SELECT * FROM Manufactures WHERE ManufacturesId = {id} ";
+                string query1 = $"EXEC GetManufacturesById @Id = {id}";
                 var data1= AppDBContext.Context.GetDataFromQuery(query1);
                 return data1;
             }
-            string query = $"SELECT * FROM Manufactures WHERE Name LIKE N'%{name}%'";
+            string query = $"EXEC SearchManufactureByName @Name = N'%{name}%'";
             var data = AppDBContext.Context.GetDataFromQuery(query);
             return data;
         }
 
         public DataTable Load()
         {
-            string query = $"SELECT TOP 100 * FROM Manufactures";
+            string query = $"EXEC GetAllManufactures";
             var data = AppDBContext.Context.GetDataFromQuery(query);
             return data;
         }
 
         public DataTable GetVehiclesByAutomakerName(string name)
         {
-            string query = $"SELECT" +
-                $" v.VehiclesId, v.VehicleName, v.LiscensePlate, v.Color, " +
-                $"m.Name as ManufactureName,m.ManufacturesId as ManufacturesId , o.FullName as OwnerName,o.OwnerId as OwnerId , o.Email as OwnerEmail," +
-                $"s.EngineType, s.FuelType , s.Weigth, s.TopSpeed, s.Acceleration, s.EngineDisplacement" +
-                $" FROM Vehicles AS v " +
-                $"JOIN Specifications AS s" +
-                $" ON s.SpecificationsId = v.SpecificationsId " +
-                $"JOIN Manufactures AS m" +
-                $" ON m.ManufacturesId = v.ManufacturesId " +
-                $"JOIN Owners AS o" +
-                $" ON o.OwnerId = v.OwnerId " +
-                $"WHERE m.Name = N'{name}'";
+            string query = $"EXEC GetVehiclesByManufactureName @ManufactureName = N'{name}'";
 
             var data = AppDBContext.Context.GetDataFromQuery(query);
             return data;

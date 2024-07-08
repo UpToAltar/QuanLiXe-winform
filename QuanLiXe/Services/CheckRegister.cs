@@ -30,7 +30,7 @@ namespace QuanLiXe.Services
 
         public bool CheckUserExisted(string username)
         {
-            string query = $"SELECT * FROM Account WHERE UserName = N'{username}'";
+            string query = $"EXEC FindUserByUserName @UserName = N'{username}'";
             var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
             if (data == 0)
             {
@@ -49,7 +49,10 @@ namespace QuanLiXe.Services
         }
 
         public bool CreateUser(string username, string password, string displayname) { 
-            string query = $"INSERT INTO Account (DisplayName, UserName, Password, Role) VALUES(N'{displayname}', N'{username}', N'{password}', N'Nhân viên')";
+            string query = $"EXEC CreateUser " +
+                $"@UserName = N'{username}', " +
+                $"@DisplayName = N'{displayname}'," +
+                $"@Password = '{password}' , @Role = N'Nhân viên' ";
             var data = AppDBContext.Context.NonQuery(query);
             if (data == 0)
             {

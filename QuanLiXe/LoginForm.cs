@@ -48,10 +48,12 @@ namespace QuanLiXe
                     //Add Recent User
 
                     DataRow row = checkLogin.Rows[0];
+                    RecentUser.ID = row["ID"].ToString();
                     RecentUser.UserName = row["UserName"].ToString();
                     RecentUser.Role = row["Role"].ToString();
                     RecentUser.DisplayName = row["DisplayName"].ToString();
                     RecentUser.Password = row["Password"].ToString();
+                    RecentUser.Image = row["Image"].ToString();
 
                     //Show Form
                     this.Hide();

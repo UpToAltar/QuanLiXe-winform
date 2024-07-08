@@ -31,7 +31,7 @@ namespace QuanLiXe.Services
 
         public DataTable Check(string username, string password)
         {
-            string query = $"SELECT * FROM Account WHERE UserName = N'{username}' AND Password = N'{password}'";
+            string query = $"EXEC FindUserByUserNameAndPassword @UserName = N'{username}', @Password = N'{password}'";
             var data = AppDBContext.Context.GetDataFromQuery(query);
             return data;
         }

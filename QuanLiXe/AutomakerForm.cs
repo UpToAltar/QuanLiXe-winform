@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Columns;
 using QuanLiXe.Helper;
 using QuanLiXe.Services;
 using System;
@@ -23,6 +24,15 @@ namespace QuanLiXe
 
         void LoadData()
         {
+            var gridId = new GridColumn() { Caption = "ID", Visible = true, FieldName = "ManufacturesId" };
+            var gridName = new GridColumn() { Caption = "Tên hãng xe", Visible = true, FieldName = "Name" };
+            var gridIcon = new GridColumn() { Caption = "Đường dẫn ảnh biểu tượng", Visible = true, FieldName = "Icon" };
+
+            gridViewAutomaker.Columns.Clear();
+            gridViewAutomaker.GroupPanelText = "Danh sách hãng xe";
+            gridViewAutomaker.OptionsView.ColumnAutoWidth = true;
+            gridViewAutomaker.Columns.AddRange(new GridColumn[] { gridId, gridName, gridIcon });
+
             dataGridViewAutomaker.DataSource = AutomakerServices.Instance.Load();
         }
 
@@ -46,8 +56,8 @@ namespace QuanLiXe
             else
             {
                 //Create
-                string query = $"INSERT INTO Manufactures (Name,Icon) VALUES (N'{tbAutomakerName.Text}', N'{tbAutomakerIcon.Text}')";
-                if (AutomakerServices.Instance.GetSuccessQuery(query))
+                
+                if (AutomakerServices.Instance.CreateAutomaker(tbAutomakerName.Text,tbAutomakerIcon.Text))
                 {
                     MessageBox.Show("Thêm hãng xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
@@ -103,7 +113,7 @@ namespace QuanLiXe
             else if (!AutomakerServices.Instance.CheckFindById(tbAutomakerId.Text))
             {
                 //Check id exist
-                MessageBox.Show($"Không tồn tại xe có ID = {tbAutomakerId.Text}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Không tồn tại hãng xe có ID = {tbAutomakerId.Text}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (AutomakerServices.Instance.CheckName(tbAutomakerName.Text))
             {
@@ -112,9 +122,9 @@ namespace QuanLiXe
             }
             else
             {
-                //Create
-                string query = $"UPDATE Manufactures SET Name = N'{tbAutomakerName.Text}', Icon = N'{tbAutomakerIcon.Text}' WHERE ManufacturesId = {tbAutomakerId.Text};";
-                if (AutomakerServices.Instance.GetSuccessQuery(query))
+                //Update
+                
+                if (AutomakerServices.Instance.UpdateAutomaker(tbAutomakerId.Text, tbAutomakerName.Text,tbAutomakerIcon.Text))
                 {
                     MessageBox.Show("Cập nhật hãng xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
@@ -146,9 +156,9 @@ namespace QuanLiXe
             }
             else
             {
-                //Create
-                string query = $"DELETE FROM Manufactures WHERE ManufacturesId = {tbAutomakerId.Text};";
-                if (AutomakerServices.Instance.GetSuccessQuery(query))
+                //Delete
+                
+                if (AutomakerServices.Instance.DeleteAutomaker(tbAutomakerId.Text))
                 {
                     MessageBox.Show("Xóa hãng xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
@@ -166,7 +176,7 @@ namespace QuanLiXe
             {
                 MessageBox.Show("Vui lòng nhập tên hãng xe cần tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (!AutomakerServices.Instance.CheckFindByName(tbAutomakerName.Text))
+            else if (!AutomakerServices.Instance.CheckName(tbAutomakerName.Text))
             {
                 MessageBox.Show($"Không có hãng xe nào tên là : {tbAutomakerName.Text}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -175,6 +185,24 @@ namespace QuanLiXe
                 var data = AutomakerServices.Instance.GetVehiclesByAutomakerName(tbAutomakerName.Text);
                 if(data!= null && data.Rows.Count > 0)
                 {
+                    var gridId = new GridColumn() { Caption = "ID", Visible = true, FieldName = "VehiclesId" };
+                    var gridName = new GridColumn() { Caption = "Tên xe", Visible = true, FieldName = "VehicleName" };
+                    var gridPlate = new GridColumn() { Caption = "Biển số", Visible = true, FieldName = "LiscensePlate" };
+                    var gridColor = new GridColumn() { Caption = "Màu sắc", Visible = true, FieldName = "Color" };
+                    var gridManufactureName = new GridColumn() { Caption = "Hãng sản xuất", Visible = true, FieldName = "ManufactureName" };
+                    var gridOwnerName = new GridColumn() { Caption = "Tên chủ xe", Visible = true, FieldName = "OwnerName" };
+                    var gridEngineType = new GridColumn() { Caption = "Loại động cơ", Visible = true, FieldName = "EngineType" };
+                    var gridFuelType = new GridColumn() { Caption = "Loại nhiên liệu", Visible = true, FieldName = "FuelType" };
+                    var gridWeigth = new GridColumn() { Caption = "Trọng lượng", Visible = true, FieldName = "Weigth" };
+                    var gridTopSpeed = new GridColumn() { Caption = "Tốc độ tối đa", Visible = true, FieldName = "TopSpeed" };
+                    var gridAcceleration = new GridColumn() { Caption = "Tăng tốc", Visible = true, FieldName = "Acceleration" };
+                    var gridEngineDisplacement = new GridColumn() { Caption = "Dung tích động cơ", Visible = true, FieldName = "EngineDisplacement" };
+
+                    gridViewAutomaker.Columns.Clear();
+                    gridViewAutomaker.GroupPanelText = "Danh sách xe của hãng " + tbAutomakerName.Text;
+                    gridViewAutomaker.OptionsView.ColumnAutoWidth = false;
+                    gridViewAutomaker.Columns.AddRange(new GridColumn[] { gridId, gridName, gridPlate, gridColor, gridManufactureName, gridOwnerName, gridEngineType, gridFuelType, gridWeigth, gridTopSpeed, gridAcceleration, gridEngineDisplacement });
+
                     dataGridViewAutomaker.DataSource = data;
                 }
                 else

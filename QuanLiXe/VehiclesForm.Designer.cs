@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehiclesForm));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnExportExcelVehicles = new DevExpress.XtraEditors.SimpleButton();
             this.dataGridViewVehicles = new DevExpress.XtraGrid.GridControl();
             this.gridViewVehicles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnDeleteVehicles = new DevExpress.XtraEditors.SimpleButton();
@@ -38,7 +39,6 @@
             this.tbSearchVehicles = new System.Windows.Forms.TextBox();
             this.btnUpdateVehicles = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddVehicles = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExportExcelVehicles = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVehicles)).BeginInit();
@@ -59,6 +59,19 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1151, 669);
             this.panelControl1.TabIndex = 2;
+            // 
+            // btnExportExcelVehicles
+            // 
+            this.btnExportExcelVehicles.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcelVehicles.Appearance.Options.UseFont = true;
+            this.btnExportExcelVehicles.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnExportExcelVehicles.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExportExcelVehicles.ImageOptions.SvgImage")));
+            this.btnExportExcelVehicles.Location = new System.Drawing.Point(977, 108);
+            this.btnExportExcelVehicles.Name = "btnExportExcelVehicles";
+            this.btnExportExcelVehicles.Size = new System.Drawing.Size(169, 71);
+            this.btnExportExcelVehicles.TabIndex = 14;
+            this.btnExportExcelVehicles.Text = "Xuất file";
+            this.btnExportExcelVehicles.Click += new System.EventHandler(this.btnExportExcelVehicles_Click);
             // 
             // dataGridViewVehicles
             // 
@@ -148,19 +161,6 @@
             this.btnAddVehicles.TabIndex = 7;
             this.btnAddVehicles.Text = "Thêm";
             this.btnAddVehicles.Click += new System.EventHandler(this.btnAddVehicles_Click);
-            // 
-            // btnExportExcelVehicles
-            // 
-            this.btnExportExcelVehicles.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportExcelVehicles.Appearance.Options.UseFont = true;
-            this.btnExportExcelVehicles.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnExportExcelVehicles.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.btnExportExcelVehicles.Location = new System.Drawing.Point(977, 108);
-            this.btnExportExcelVehicles.Name = "btnExportExcelVehicles";
-            this.btnExportExcelVehicles.Size = new System.Drawing.Size(169, 71);
-            this.btnExportExcelVehicles.TabIndex = 14;
-            this.btnExportExcelVehicles.Text = "Xuất file";
-            this.btnExportExcelVehicles.Click += new System.EventHandler(this.btnExportExcelVehicles_Click);
             // 
             // VehiclesForm
             // 

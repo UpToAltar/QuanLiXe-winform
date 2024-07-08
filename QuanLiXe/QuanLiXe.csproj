@@ -91,6 +91,7 @@
     <Compile Include="DTO\RecentUser.cs" />
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="DTO\VehiclesDTO.cs" />
+    <Compile Include="Helper\ChechImageUrl.cs" />
     <Compile Include="Helper\ExportExcelFile.cs" />
     <Compile Include="Helper\ValidateHelper.cs" />
     <Compile Include="LoginForm.cs">
@@ -104,6 +105,12 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyAccountForm.Designer.cs">
+      <DependentUpon>MyAccountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OwnerForm.cs">
       <SubType>Form</SubType>
@@ -162,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyAccountForm.resx">
+      <DependentUpon>MyAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OwnerForm.resx">
       <DependentUpon>OwnerForm.cs</DependentUpon>

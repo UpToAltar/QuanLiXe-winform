@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.groupControlLogin = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditUserName = new DevExpress.XtraEditors.TextEdit();
-            this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
+            this.btnResetPass = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelLogin = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.btnResetPass = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
+            this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditUserName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlLogin)).BeginInit();
             this.groupControlLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlLogin
@@ -65,24 +65,67 @@
             this.groupControlLogin.Text = "Khai báo thông tin tài khoản";
             this.groupControlLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControlLogin_Paint);
             // 
-            // labelControl1
+            // btnResetPass
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(326, 93);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(210, 34);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Tên đăng nhập";
+            this.btnResetPass.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPass.Appearance.Options.UseFont = true;
+            this.btnResetPass.Location = new System.Drawing.Point(60, 277);
+            this.btnResetPass.Name = "btnResetPass";
+            this.btnResetPass.Size = new System.Drawing.Size(167, 47);
+            this.btnResetPass.TabIndex = 7;
+            this.btnResetPass.Text = "Đổi mật khẩu";
+            this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
             // 
-            // textEditUserName
+            // btnCancelLogin
             // 
-            this.textEditUserName.Location = new System.Drawing.Point(661, 94);
-            this.textEditUserName.Name = "textEditUserName";
-            this.textEditUserName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEditUserName.Properties.Appearance.Options.UseFont = true;
-            this.textEditUserName.Size = new System.Drawing.Size(387, 34);
-            this.textEditUserName.TabIndex = 1;
+            this.btnCancelLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelLogin.Appearance.Options.UseFont = true;
+            this.btnCancelLogin.Location = new System.Drawing.Point(881, 256);
+            this.btnCancelLogin.Name = "btnCancelLogin";
+            this.btnCancelLogin.Size = new System.Drawing.Size(167, 47);
+            this.btnCancelLogin.TabIndex = 2;
+            this.btnCancelLogin.Text = "Thoát";
+            this.btnCancelLogin.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl4.ImageOptions.Image")));
+            this.labelControl4.Location = new System.Drawing.Point(33, 46);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(225, 225);
+            this.labelControl4.TabIndex = 6;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Appearance.Options.UseFont = true;
+            this.btnLogin.Location = new System.Drawing.Point(661, 256);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(167, 47);
+            this.btnLogin.TabIndex = 1;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // hyperlinkLabelControl1
+            // 
+            this.hyperlinkLabelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hyperlinkLabelControl1.Appearance.Options.UseFont = true;
+            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(542, 264);
+            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
+            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(73, 24);
+            this.hyperlinkLabelControl1.TabIndex = 5;
+            this.hyperlinkLabelControl1.Text = "Đăng ký";
+            this.hyperlinkLabelControl1.Click += new System.EventHandler(this.hyperlinkLabelControl1_Click);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(323, 264);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(213, 24);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Bạn chưa có tài khoản ?";
             // 
             // textEditPassword
             // 
@@ -104,67 +147,24 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Mật khẩu";
             // 
-            // labelControl3
+            // textEditUserName
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(323, 264);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(213, 24);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Bạn chưa có tài khoản ?";
+            this.textEditUserName.Location = new System.Drawing.Point(661, 94);
+            this.textEditUserName.Name = "textEditUserName";
+            this.textEditUserName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEditUserName.Properties.Appearance.Options.UseFont = true;
+            this.textEditUserName.Size = new System.Drawing.Size(387, 34);
+            this.textEditUserName.TabIndex = 1;
             // 
-            // hyperlinkLabelControl1
+            // labelControl1
             // 
-            this.hyperlinkLabelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hyperlinkLabelControl1.Appearance.Options.UseFont = true;
-            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(542, 264);
-            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
-            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(73, 24);
-            this.hyperlinkLabelControl1.TabIndex = 5;
-            this.hyperlinkLabelControl1.Text = "Đăng ký";
-            this.hyperlinkLabelControl1.Click += new System.EventHandler(this.hyperlinkLabelControl1_Click);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Appearance.Options.UseFont = true;
-            this.btnLogin.Location = new System.Drawing.Point(661, 256);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(167, 47);
-            this.btnLogin.TabIndex = 1;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // btnCancelLogin
-            // 
-            this.btnCancelLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelLogin.Appearance.Options.UseFont = true;
-            this.btnCancelLogin.Location = new System.Drawing.Point(881, 256);
-            this.btnCancelLogin.Name = "btnCancelLogin";
-            this.btnCancelLogin.Size = new System.Drawing.Size(167, 47);
-            this.btnCancelLogin.TabIndex = 2;
-            this.btnCancelLogin.Text = "Thoát";
-            this.btnCancelLogin.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl4.ImageOptions.Image")));
-            this.labelControl4.Location = new System.Drawing.Point(33, 46);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(225, 225);
-            this.labelControl4.TabIndex = 6;
-            // 
-            // btnResetPass
-            // 
-            this.btnResetPass.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetPass.Appearance.Options.UseFont = true;
-            this.btnResetPass.Location = new System.Drawing.Point(60, 277);
-            this.btnResetPass.Name = "btnResetPass";
-            this.btnResetPass.Size = new System.Drawing.Size(167, 47);
-            this.btnResetPass.TabIndex = 7;
-            this.btnResetPass.Text = "Đổi mật khẩu";
-            this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(326, 93);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(210, 34);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Tên đăng nhập";
             // 
             // LoginForm
             // 
@@ -181,8 +181,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControlLogin)).EndInit();
             this.groupControlLogin.ResumeLayout(false);
             this.groupControlLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

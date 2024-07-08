@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountForm));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnExportExcelAccount = new DevExpress.XtraEditors.SimpleButton();
             this.dataGridViewAccount = new DevExpress.XtraGrid.GridControl();
             this.gridViewAccount = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tbAccountRole = new System.Windows.Forms.ComboBox();
@@ -48,7 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbAccountId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnExportExcelAccount = new DevExpress.XtraEditors.SimpleButton();
+            this.tbAccountImage = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).BeginInit();
@@ -57,6 +59,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.tbAccountImage);
+            this.panelControl1.Controls.Add(this.label6);
             this.panelControl1.Controls.Add(this.btnExportExcelAccount);
             this.panelControl1.Controls.Add(this.dataGridViewAccount);
             this.panelControl1.Controls.Add(this.tbAccountRole);
@@ -77,8 +81,21 @@
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Location = new System.Drawing.Point(12, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1177, 669);
+            this.panelControl1.Size = new System.Drawing.Size(1177, 739);
             this.panelControl1.TabIndex = 2;
+            // 
+            // btnExportExcelAccount
+            // 
+            this.btnExportExcelAccount.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcelAccount.Appearance.Options.UseFont = true;
+            this.btnExportExcelAccount.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnExportExcelAccount.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExportExcelAccount.ImageOptions.SvgImage")));
+            this.btnExportExcelAccount.Location = new System.Drawing.Point(1001, 31);
+            this.btnExportExcelAccount.Name = "btnExportExcelAccount";
+            this.btnExportExcelAccount.Size = new System.Drawing.Size(169, 71);
+            this.btnExportExcelAccount.TabIndex = 20;
+            this.btnExportExcelAccount.Text = "Xuất file";
+            this.btnExportExcelAccount.Click += new System.EventHandler(this.btnExportExcelAccount_Click);
             // 
             // dataGridViewAccount
             // 
@@ -100,7 +117,7 @@
             // 
             this.tbAccountRole.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAccountRole.FormattingEnabled = true;
-            this.tbAccountRole.Location = new System.Drawing.Point(852, 501);
+            this.tbAccountRole.Location = new System.Drawing.Point(852, 578);
             this.tbAccountRole.Name = "tbAccountRole";
             this.tbAccountRole.Size = new System.Drawing.Size(317, 36);
             this.tbAccountRole.TabIndex = 16;
@@ -109,11 +126,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(847, 470);
+            this.label5.Location = new System.Drawing.Point(847, 547);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 28);
             this.label5.TabIndex = 15;
             this.label5.Text = "Vai trò";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tbAccountPassword
             // 
@@ -185,7 +203,7 @@
             this.btnUpdateAccount.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateAccount.Appearance.Options.UseFont = true;
             this.btnUpdateAccount.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnUpdateAccount.ImageOptions.SvgImage")));
-            this.btnUpdateAccount.Location = new System.Drawing.Point(1020, 571);
+            this.btnUpdateAccount.Location = new System.Drawing.Point(1019, 649);
             this.btnUpdateAccount.Name = "btnUpdateAccount";
             this.btnUpdateAccount.Size = new System.Drawing.Size(150, 71);
             this.btnUpdateAccount.TabIndex = 8;
@@ -198,7 +216,7 @@
             this.btnAddAccount.Appearance.Options.UseFont = true;
             this.btnAddAccount.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAddAccount.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddAccount.ImageOptions.SvgImage")));
-            this.btnAddAccount.Location = new System.Drawing.Point(852, 571);
+            this.btnAddAccount.Location = new System.Drawing.Point(852, 649);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(150, 71);
             this.btnAddAccount.TabIndex = 7;
@@ -259,24 +277,29 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ID";
             // 
-            // btnExportExcelAccount
+            // tbAccountImage
             // 
-            this.btnExportExcelAccount.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportExcelAccount.Appearance.Options.UseFont = true;
-            this.btnExportExcelAccount.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnExportExcelAccount.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExportExcelAutomaker.ImageOptions.SvgImage")));
-            this.btnExportExcelAccount.Location = new System.Drawing.Point(1001, 31);
-            this.btnExportExcelAccount.Name = "btnExportExcelAccount";
-            this.btnExportExcelAccount.Size = new System.Drawing.Size(169, 71);
-            this.btnExportExcelAccount.TabIndex = 20;
-            this.btnExportExcelAccount.Text = "Xuất file";
-            this.btnExportExcelAccount.Click += new System.EventHandler(this.btnExportExcelAccount_Click);
+            this.tbAccountImage.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAccountImage.Location = new System.Drawing.Point(851, 495);
+            this.tbAccountImage.Name = "tbAccountImage";
+            this.tbAccountImage.Size = new System.Drawing.Size(318, 35);
+            this.tbAccountImage.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(846, 464);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(191, 28);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Đường dẫn ảnh";
             // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 686);
+            this.ClientSize = new System.Drawing.Size(1201, 756);
             this.Controls.Add(this.panelControl1);
             this.Name = "AccountForm";
             this.Text = "Trang quản trị tài khoản";
@@ -311,5 +334,7 @@
         private DevExpress.XtraGrid.GridControl dataGridViewAccount;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewAccount;
         private DevExpress.XtraEditors.SimpleButton btnExportExcelAccount;
+        private System.Windows.Forms.TextBox tbAccountImage;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutomakerForm));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnExportExcelAutomaker = new DevExpress.XtraEditors.SimpleButton();
             this.dataGridViewAutomaker = new DevExpress.XtraGrid.GridControl();
             this.gridViewAutomaker = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnViewVehiclesOfAutoMaker = new DevExpress.XtraEditors.SimpleButton();
@@ -45,7 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbAutomakerId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnExportExcelAutomaker = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutomaker)).BeginInit();
@@ -73,6 +73,19 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1174, 649);
             this.panelControl1.TabIndex = 0;
+            // 
+            // btnExportExcelAutomaker
+            // 
+            this.btnExportExcelAutomaker.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcelAutomaker.Appearance.Options.UseFont = true;
+            this.btnExportExcelAutomaker.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnExportExcelAutomaker.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExportExcelAutomaker.ImageOptions.SvgImage")));
+            this.btnExportExcelAutomaker.Location = new System.Drawing.Point(981, 36);
+            this.btnExportExcelAutomaker.Name = "btnExportExcelAutomaker";
+            this.btnExportExcelAutomaker.Size = new System.Drawing.Size(169, 71);
+            this.btnExportExcelAutomaker.TabIndex = 19;
+            this.btnExportExcelAutomaker.Text = "Xuất file";
+            this.btnExportExcelAutomaker.Click += new System.EventHandler(this.btnExportExcelAutomaker_Click);
             // 
             // dataGridViewAutomaker
             // 
@@ -195,9 +208,9 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(827, 385);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 28);
+            this.label3.Size = new System.Drawing.Size(326, 28);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Link Icon";
+            this.label3.Text = "Đường dẫn ảnh biểu tượng";
             // 
             // tbAutomakerName
             // 
@@ -235,24 +248,11 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ID";
             // 
-            // btnExportExcelAutomaker
-            // 
-            this.btnExportExcelAutomaker.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportExcelAutomaker.Appearance.Options.UseFont = true;
-            this.btnExportExcelAutomaker.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnExportExcelAutomaker.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExportExcelOwner.ImageOptions.SvgImage")));
-            this.btnExportExcelAutomaker.Location = new System.Drawing.Point(981, 36);
-            this.btnExportExcelAutomaker.Name = "btnExportExcelAutomaker";
-            this.btnExportExcelAutomaker.Size = new System.Drawing.Size(169, 71);
-            this.btnExportExcelAutomaker.TabIndex = 19;
-            this.btnExportExcelAutomaker.Text = "Xuất file";
-            this.btnExportExcelAutomaker.Click += new System.EventHandler(this.btnExportExcelAutomaker_Click);
-            // 
             // AutomakerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1202, 669);
+            this.ClientSize = new System.Drawing.Size(1208, 673);
             this.Controls.Add(this.panelControl1);
             this.Name = "AutomakerForm";
             this.Text = "Hãng xe";

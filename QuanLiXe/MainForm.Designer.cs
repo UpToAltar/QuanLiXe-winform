@@ -35,7 +35,7 @@
             this.btnAutomaker = new DevExpress.XtraBars.BarButtonItem();
             this.btnOwner = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMyAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnAdminUser = new DevExpress.XtraBars.BarButtonItem();
             this.homePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupCar = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -60,7 +60,7 @@
             this.btnAutomaker,
             this.btnOwner,
             this.barButtonItem2,
-            this.barButtonItem3,
+            this.btnMyAccount,
             this.btnAdminUser});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 7;
@@ -103,12 +103,13 @@
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
-            // barButtonItem3
+            // btnMyAccount
             // 
-            this.barButtonItem3.Caption = "Thông tin cá nhân";
-            this.barButtonItem3.Id = 5;
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnMyAccount.Caption = "Thông tin cá nhân";
+            this.btnMyAccount.Id = 5;
+            this.btnMyAccount.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnMyAccount.Name = "btnMyAccount";
+            this.btnMyAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMyAccount_ItemClick);
             // 
             // btnAdminUser
             // 
@@ -142,7 +143,7 @@
             // 
             // groupUser
             // 
-            this.groupUser.ItemLinks.Add(this.barButtonItem3);
+            this.groupUser.ItemLinks.Add(this.btnMyAccount);
             this.groupUser.Name = "groupUser";
             this.groupUser.Text = "Cá nhân";
             // 
@@ -206,7 +207,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupOwner;
         private DevExpress.XtraBars.BarButtonItem btnOwner;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnMyAccount;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupUser;
         private DevExpress.XtraBars.BarButtonItem btnAdminUser;
         public DevExpress.XtraBars.Ribbon.RibbonPage adminPage;

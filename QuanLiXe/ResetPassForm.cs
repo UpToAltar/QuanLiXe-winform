@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using QuanLiXe.DTO;
 using QuanLiXe.Services;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,14 @@ namespace QuanLiXe
         public ResetPassForm()
         {
             InitializeComponent();
+        }
+
+        private MyAccountForm _myAccountForm;
+
+        public ResetPassForm(MyAccountForm myAccountForm)
+        {
+            InitializeComponent();
+            _myAccountForm = myAccountForm;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -55,6 +64,8 @@ namespace QuanLiXe
                 if (CheckResetPass.Instance.ResetPassword(username, newPass))
                 {
                     MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RecentUser.Password = newPass;
+                    _myAccountForm.Load();
                     this.Hide();
                 }
                 else
@@ -78,15 +89,12 @@ namespace QuanLiXe
         private void btnCancelLogin_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
         }
 
         private void ResetPassForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var checkOut = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (checkOut != DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
+            
         }
     }
 }

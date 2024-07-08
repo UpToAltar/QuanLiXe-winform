@@ -45,7 +45,7 @@ namespace QuanLiXe.Services
 
         public bool CheckPlate(string plate)
         {
-            string query = $"SELECT * FROM Vehicles WHERE LiscensePlate = N'{plate}'";
+            string query = $"EXEC FindVehiclesByPlate @LiscensePlate = '{plate}'";
             var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
             if (data == 0)
             {
@@ -61,7 +61,7 @@ namespace QuanLiXe.Services
             {
                 return false;
             }
-            string query = $"SELECT * FROM Vehicles WHERE VehiclesId = {id}";
+            string query = $"EXEC FindVehiclesById @Id = {id}";
             var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
             if (data == 0)
             {
@@ -82,7 +82,7 @@ namespace QuanLiXe.Services
             var list = new List<VehiclesDTO>();
             if (int.TryParse(name, out id))
             {
-                string query1 = QueryGetBase + $" WHERE v.VehiclesId = {id}";
+                string query1 = $"EXEC GetVehiclesByIdOrSearchByName @Id = {id},@Name = N'', @Type = 1";
                 var data1 = AppDBContext.Context.GetDataFromQuery(query1);
                 foreach (DataRow item in data1.Rows)
                 {
@@ -91,7 +91,7 @@ namespace QuanLiXe.Services
                 return list;
                 
             }
-            string query = QueryGetBase + $"WHERE v.VehicleName LIKE N'%{name}%'";
+            string query = $"EXEC GetVehiclesByIdOrSearchByName @Id = 0,@Name = N'%{name}%', @Type = 2"; ;
 
             
             var data = AppDBContext.Context.GetDataFromQuery(query);
@@ -104,7 +104,7 @@ namespace QuanLiXe.Services
 
         public VehiclesUpdateDTO SearchById(string id)
         {
-            string query = QueryGetBase + $" WHERE v.VehiclesId = {id}";
+            string query = $"EXEC GetVehiclesByIdOrSearchByName @Id = {id},@Name = N'', @Type = 1";
             var data = AppDBContext.Context.GetDataFromQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -117,7 +117,7 @@ namespace QuanLiXe.Services
         public List<VehiclesDTO> Load()
         {
             var list = new List<VehiclesDTO>();
-            string query = QueryGetBase;
+            string query = "EXEC GetAllVehicles";
             var data = AppDBContext.Context.GetDataFromQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -129,7 +129,7 @@ namespace QuanLiXe.Services
         public List<ManufacturesDTO> LoadManufactures()
         {
             var list = new List<ManufacturesDTO>();
-            string query = $"SELECT * FROM Manufactures";
+            string query = $"EXEC GetAllManufactures";
             var data = AppDBContext.Context.GetDataFromQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -141,7 +141,7 @@ namespace QuanLiXe.Services
         public List<OwnerDTO> LoadOwners()
         {
             var list = new List<OwnerDTO>();
-            string query = $"SELECT * FROM Owners";
+            string query = $"EXEC GetAllOwner";
             var data = AppDBContext.Context.GetDataFromQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -152,7 +152,7 @@ namespace QuanLiXe.Services
 
         public bool CheckPlateOther(string plate, string id)
         {
-            string query = $"SELECT * FROM Vehicles WHERE LiscensePlate = N'{plate}' AND VehiclesId != {id}";
+            string query = $"EXEC FindVehiclesByPlateNotById @LiscensePlate = '{plate}', @Id = {id}";
             var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
             if (data == 0)
             {
@@ -165,8 +165,10 @@ namespace QuanLiXe.Services
         public bool CreateVehicles(TextBox color, TextBox engineDisplacement, TextBox engineType, TextBox fuelType, TextBox liscensePlate, TextBox name, NumericUpDown acceleration, NumericUpDown weigth, NumericUpDown topSpeed,ComboBox manufactures, ComboBox owner)
         {
             // Create specifications
-            string querySpecifications = $"INSERT INTO dbo.Specifications (EngineType, FuelType, Weigth, TopSpeed, Acceleration, EngineDisplacement) " +
-                $"VALUES (N'{engineType.Text}', N'{fuelType.Text}', {weigth.Value}, {topSpeed.Value}, {acceleration.Value}, N'{engineDisplacement.Text}')";
+            string querySpecifications = $"EXEC CreateSpecification " +
+                $"@EngineType = N'{engineType.Text}', @FuelType= N'{fuelType.Text}', " +
+                $"@EngineDisplacement = N'{engineDisplacement.Text}', " +
+                $"@Weigth = {weigth.Value}, @TopSpeed = {topSpeed.Value}, @Acceleration = {acceleration.Value}";
             var data = AppDBContext.Context.NonQuery(querySpecifications);
             if (data == 0 || data== -1)
             {
@@ -177,7 +179,7 @@ namespace QuanLiXe.Services
             var ownerData = owner.SelectedItem as OwnerDTO;
 
             // Get specId
-            string queryGetSpecId = $"SELECT TOP 1 SpecificationsId FROM dbo.Specifications ORDER BY SpecificationsId DESC";
+            string queryGetSpecId = $"EXEC GetSpecificationId ";
             var data1 = AppDBContext.Context.GetDataFromQuery(queryGetSpecId);
             int specId = 0;
             foreach (DataRow item in data1.Rows)
@@ -185,8 +187,9 @@ namespace QuanLiXe.Services
                 specId = Int32.Parse(item["SpecificationsId"].ToString());
             }
 
-            string queryCreateVehicles = $"INSERT INTO dbo.Vehicles (VehicleName, LiscensePlate, Color, ManufacturesId, OwnerId, SpecificationsId) " +
-                $"VALUES (N'{name.Text}', N'{liscensePlate.Text}', N'{color.Text}', {manufacture.ID}, {ownerData.ID}, {specId})";
+            string queryCreateVehicles = $"EXEC CreateVehicle" +
+                $" @VehicleName = N'{name.Text}', @LiscensePlate = N'{liscensePlate.Text}', " +
+                $"@Color= N'{color.Text}', @ManufacturesId={manufacture.ID}, @OwnerId = {ownerData.ID}, @SpecificationsId = {specId}";
             var data2 = AppDBContext.Context.NonQuery(queryCreateVehicles);
             if (data2 == 0 || data2 == -1)
             {
@@ -200,15 +203,11 @@ namespace QuanLiXe.Services
         public bool UpdateVehicles(TextBox color, TextBox engineDisplacement, TextBox engineType, TextBox fuelType, TextBox liscensePlate, TextBox name, NumericUpDown acceleration, NumericUpDown weigth, NumericUpDown topSpeed, ComboBox manufactures, ComboBox owner,TextBox id)
         {
             //Update specifications
-            string querySpecifications = $"UPDATE dbo.Specifications SET " +
-                $"EngineType = N'{engineType.Text}', " +
-                $"FuelType = N'{fuelType.Text}', " +
-                $"Weigth = {weigth.Value}, " +
-                $"TopSpeed = {topSpeed.Value}, " +
-                $"Acceleration = {acceleration.Value}, " +
-                $"EngineDisplacement = N'{engineDisplacement.Text}' " +
-                $"WHERE SpecificationsId = " +
-                $"(SELECT SpecificationsId FROM dbo.Vehicles WHERE VehiclesId = {id.Text})";
+            string querySpecifications = $"EXEC UpdateSpecificationByVehiclesId " +
+                $"@EngineType = N'{engineType.Text}', @FuelType= N'{fuelType.Text}', " +
+                $"@EngineDisplacement = N'{engineDisplacement.Text}', @Weigth = {weigth.Value}," +
+                $" @TopSpeed = {topSpeed.Value}, @Acceleration = {acceleration.Value}," +
+                $" @VehiclesId = {id.Text}";
             var data = AppDBContext.Context.NonQuery(querySpecifications);
             if (data == 0 || data == -1)
             {
@@ -218,13 +217,10 @@ namespace QuanLiXe.Services
             // Update vehicles
             var manufacture = manufactures.SelectedItem as ManufacturesDTO;
             var ownerData = owner.SelectedItem as OwnerDTO;
-            string queryUpdateVehicles = $"UPDATE dbo.Vehicles SET " +
-                $"VehicleName = N'{name.Text}', " +
-                $"LiscensePlate = N'{liscensePlate.Text}', " +
-                $"Color = N'{color.Text}', " +
-                $"ManufacturesId = {manufacture.ID}, " +
-                $"OwnerId = {ownerData.ID} " +
-                $"WHERE VehiclesId = {id.Text}";
+            string queryUpdateVehicles = $"EXEC UpdateVehicles " +
+                $"@VehicleName = N'{name.Text}' , @LiscensePlate = N'{liscensePlate.Text}'," +
+                $"@Color = N'{color.Text}', @ManufacturesId = {manufacture.ID}, " +
+                $"@OwnerId = {ownerData.ID}, @VehiclesId = {id.Text}";
             var data2 = AppDBContext.Context.NonQuery(queryUpdateVehicles);
             if (data2 == 0 || data2 == -1)
             {
@@ -235,7 +231,7 @@ namespace QuanLiXe.Services
 
         public bool DeleteVehicles(string id)
         {
-            string query = $"DELETE FROM dbo.Vehicles WHERE VehiclesId = {id}";
+            string query = $"EXEC DeleteVehicleById @VehiclesId = {id}";
             var data = AppDBContext.Context.NonQuery(query);
             if (data == 0 || data == -1)
             {

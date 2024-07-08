@@ -74,3 +74,4 @@ D:\TeamGame\QuanLiXe\QuanLiXe\bin\Debug\DevExpress.XtraTreeList.v24.1.dll
 D:\TeamGame\QuanLiXe\QuanLiXe\bin\Debug\DevExpress.XtraGrid.v24.1.xml
 D:\TeamGame\QuanLiXe\QuanLiXe\bin\Debug\DevExpress.XtraPrinting.v24.1.xml
 D:\TeamGame\QuanLiXe\QuanLiXe\bin\Debug\DevExpress.XtraTreeList.v24.1.xml
+D:\TeamGame\QuanLiXe\QuanLiXe\obj\Debug\QuanLiXe.MyAccountForm.resources

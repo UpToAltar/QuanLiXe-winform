@@ -68,5 +68,10 @@ namespace QuanLiXe
         {
             OpenForm(typeof(VehiclesForm));
         }
+
+        private void btnMyAccount_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(MyAccountForm));
+        }
     }
 }

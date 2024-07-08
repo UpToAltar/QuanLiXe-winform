@@ -30,7 +30,7 @@ namespace QuanLiXe.Services
 
         public bool CheckUserExistedAndPassword(string username,string password)
         {
-            string query = $"SELECT * FROM Account WHERE UserName = N'{username}' AND Password = N'{password}'";
+            string query = $"EXEC FindUserByUserNameAndPassword @UserName = N'{username}', @Password = N'{password}'";
             var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
             if (data == 0)
             {
@@ -50,9 +50,7 @@ namespace QuanLiXe.Services
 
         public bool ResetPassword(string username, string password)
         {
-            string query = $"UPDATE dbo.Account " +
-                $"SET Password = N'{password}' " +
-                $"WHERE UserName = N'{username}'";
+            string query = $"EXEC UpdatePassword @UserName = N'{username}',@Password = N'{password}' ";
             var data = AppDBContext.Context.NonQuery(query);
             if (data == 0)
             {

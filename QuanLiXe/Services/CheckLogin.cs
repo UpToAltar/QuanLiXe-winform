@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLiXe.DatabaseHelper;
+using QuanLiXe.Helper;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -29,11 +31,25 @@ namespace QuanLiXe.Services
 
         private CheckLogin() { }
 
-        public DataTable Check(string username, string password)
+        public DataTable GetUserByUserName(out string msgError,string username, string password)
         {
-            string query = $"EXEC FindUserByUserNameAndPassword @UserName = N'{username}', @Password = N'{password}'";
-            var data = AppDBContext.Context.GetDataFromQuery(query);
-            return data;
+            try
+            {
+                var param = new List<DbParamsSProduce> { new DbParamsSProduce("@UserName", username, SqlDbType.NVarChar) };
+                DataTable data = AppDBContext.Context.ExecuteSProcedureReturnDataTable(out msgError, "", "[dbo].[FindUserByUserName]", param);
+                if (PasswordHelper.Instance.VerifyPassword(password, data.Rows[0]["Password"].ToString()))
+                {
+                    return data;
+                }
+            } catch (Exception e)
+            {
+                msgError = e.Message;
+                return null;
+            }
+            return null;
+            
         }
+
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using QuanLiXe.DTO;
 using QuanLiXe.Helper;
 using QuanLiXe.Services;
 using System;
@@ -13,58 +14,81 @@ using System.Windows.Forms;
 
 namespace QuanLiXe
 {
-    public partial class AddVehiclesForm : DevExpress.XtraEditors.XtraForm
+    public partial class frmAddVehicles : DevExpress.XtraEditors.XtraForm
     {
-        private VehiclesForm _vehiclesForm;
-        public AddVehiclesForm(VehiclesForm vehiclesForm)
+        private frmVehicles _vehiclesForm;
+        public frmAddVehicles(frmVehicles vehiclesForm)
         {
             InitializeComponent();
-            LoadData();
+            
             _vehiclesForm = vehiclesForm;
+            LoadData();
         }
 
         void LoadData()
         {
             //Load manufactures
-            var dataManufactures = VehiclesServices.Instance.LoadManufactures();
+            string msgError = "";
+            var dataManufactures = VehiclesServices.Instance.LoadManufactures(out msgError);
 
-            if (tbVehiclesManufactures.Items.Count == 0)
+            if (cboVehiclesManufactures.Items.Count == 0)
             {
                 foreach (var item in dataManufactures)
                 {
-                    tbVehiclesManufactures.Items.Add(item);
+                    cboVehiclesManufactures.Items.Add(item);
 
                 }
-                tbVehiclesManufactures.SelectedIndex = 0;
-                tbVehiclesManufactures.DisplayMember = "Name";
+                cboVehiclesManufactures.SelectedIndex = 0;
+                cboVehiclesManufactures.DisplayMember = "Name";
             }
 
             //Load Owner
-            var dataOwner = VehiclesServices.Instance.LoadOwners();
-            if (tbVehiclesOwner.Items.Count == 0)
+            var dataOwner = VehiclesServices.Instance.LoadOwners(out msgError);
+            if (cboVehiclesOwner.Items.Count == 0)
             {
                 foreach (var item in dataOwner)
                 {
-                    tbVehiclesOwner.Items.Add(item);
+                    cboVehiclesOwner.Items.Add(item);
                 }
-                tbVehiclesOwner.SelectedIndex = 0;
-                tbVehiclesOwner.DisplayMember = "FullName";
+                cboVehiclesOwner.SelectedIndex = 0;
+                cboVehiclesOwner.DisplayMember = "FullName";
             }
         }
 
         private void btnAddVehiclesConfirm_Click(object sender, EventArgs e)
         {
+            string msgError = "";
             var list = new List<TextBox>
             {
                 tbVehiclesColor,tbVehiclesEngineDisplacement,tbVehiclesEngineType,tbVehiclesFuelType,tbVehiclesLiscensePlate,tbVehiclesName
 
             };
-            if (!ValidateHelper.Instance.ValidateEmptyTextBox(list))
+            if (ValidateHelper.Instance.IsEmptyTextBox(list))
             {
                 // Check empty
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }           
-            else if (VehiclesServices.Instance.CheckPlate(tbVehiclesLiscensePlate.Text))
+            }
+            else if (!ValidateHelper.Instance.IsValidMaxLengthTextBox(list, 100))
+            {
+                //Check max length
+                MessageBox.Show("Các trường nhập tối đa 100 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!ValidateHelper.Instance.IsValidMinMax(nudVehiclesWeigth.Value,0,1000000))
+            {
+                //Check max length
+                MessageBox.Show("Cân nặng cần nằm trong khoảng 0 đến 1000000 kg", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!ValidateHelper.Instance.IsValidMinMax(nudVehicleTopSpeed.Value, 0, 1000))
+            {
+                //Check max length
+                MessageBox.Show("Tốc độ tối đa cần nằm trong khoảng 0 đến 1000 km/h", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!ValidateHelper.Instance.IsValidMinMax(nudVehiclesAcceleration.Value, 0, 1000))
+            {
+                //Check max length
+                MessageBox.Show("Tăng tốc cần nằm trong khoảng 0 đến 1000 km/h", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (VehiclesServices.Instance.IsPlateExisted(out msgError, tbVehiclesLiscensePlate.Text))
             {
                 //Check name exist
                 MessageBox.Show("Biển số xe đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -73,11 +97,11 @@ namespace QuanLiXe
             {
                 //Create
                 
-                if (VehiclesServices.Instance.CreateVehicles(tbVehiclesColor, tbVehiclesEngineDisplacement, tbVehiclesEngineType, tbVehiclesFuelType, tbVehiclesLiscensePlate, tbVehiclesName, tbVehiclesAcceleration,tbVehiclesWeigth,tbVehicleTopSpeed,tbVehiclesManufactures,tbVehiclesOwner))
+                if (VehiclesServices.Instance.CreateVehicles( out msgError,tbVehiclesColor, tbVehiclesEngineDisplacement, tbVehiclesEngineType, tbVehiclesFuelType, tbVehiclesLiscensePlate, tbVehiclesName, nudVehiclesAcceleration,nudVehiclesWeigth,nudVehicleTopSpeed,cboVehiclesManufactures,cboVehiclesOwner,RecentUser.ID))
                 {
                     MessageBox.Show("Thêm mới xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
-                    _vehiclesForm.LoadData();
+                    _vehiclesForm.LoadData(0,DateTime.Now,DateTime.Now);
                     this.Close();
                 }
                 else

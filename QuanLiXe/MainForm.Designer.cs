@@ -1,6 +1,6 @@
 ﻿namespace QuanLiXe
 {
-    partial class MainForm
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnCar = new DevExpress.XtraBars.BarButtonItem();
             this.btnAutomaker = new DevExpress.XtraBars.BarButtonItem();
@@ -37,6 +37,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnMyAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnAdminUser = new DevExpress.XtraBars.BarButtonItem();
+            this.btnActivityHistory = new DevExpress.XtraBars.BarButtonItem();
             this.homePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupCar = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupOwner = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -61,14 +62,15 @@
             this.btnOwner,
             this.barButtonItem2,
             this.btnMyAccount,
-            this.btnAdminUser});
+            this.btnAdminUser,
+            this.btnActivityHistory});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 7;
+            this.ribbon.MaxItemId = 8;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.homePage,
             this.adminPage});
-            this.ribbon.Size = new System.Drawing.Size(1198, 178);
+            this.ribbon.Size = new System.Drawing.Size(1405, 178);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnCar
@@ -107,7 +109,7 @@
             // 
             this.btnMyAccount.Caption = "Thông tin cá nhân";
             this.btnMyAccount.Id = 5;
-            this.btnMyAccount.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnMyAccount.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMyAccount.ImageOptions.LargeImage")));
             this.btnMyAccount.Name = "btnMyAccount";
             this.btnMyAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMyAccount_ItemClick);
             // 
@@ -118,6 +120,14 @@
             this.btnAdminUser.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdminUser.ImageOptions.LargeImage")));
             this.btnAdminUser.Name = "btnAdminUser";
             this.btnAdminUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
+            // btnActivityHistory
+            // 
+            this.btnActivityHistory.Caption = "Lịch sử hoạt động";
+            this.btnActivityHistory.Id = 7;
+            this.btnActivityHistory.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnActivityHistory.ImageOptions.SvgImage")));
+            this.btnActivityHistory.Name = "btnActivityHistory";
+            this.btnActivityHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnActivityHistory_ItemClick);
             // 
             // homePage
             // 
@@ -157,6 +167,7 @@
             // groupAdmin
             // 
             this.groupAdmin.ItemLinks.Add(this.btnAdminUser);
+            this.groupAdmin.ItemLinks.Add(this.btnActivityHistory);
             this.groupAdmin.Name = "groupAdmin";
             this.groupAdmin.Text = "Quản trị";
             // 
@@ -165,7 +176,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 952);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1198, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1405, 30);
             // 
             // pageAutomaker
             // 
@@ -175,15 +186,15 @@
             this.pageAutomaker.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
-            // MainForm
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 982);
+            this.ClientSize = new System.Drawing.Size(1405, 982);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
-            this.Name = "MainForm";
+            this.Name = "frmMain";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
@@ -214,5 +225,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupAdmin;
         private DevExpress.XtraBars.Docking2010.DocumentManager pageAutomaker;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraBars.BarButtonItem btnActivityHistory;
     }
 }

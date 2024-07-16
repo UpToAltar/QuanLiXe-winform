@@ -32,22 +32,66 @@ namespace QuanLiXe.Helper
         }
 
         private ValidateHelper() { }
-
-        public bool ValidateEmptyTextBox(List<TextBox> list)
+        public bool IsPasswordValid(string password)
         {
-            foreach (var item in list)
+            if (password.Length < 6)
             {
-                if (item.Text == "") return false;
+                return false;
             }
             return true;
         }
-        public bool ValidateEmptyTextEdit(List<TextEdit> list)
+
+        public bool IsEmptyTextBox(List<TextBox> list)
         {
             foreach (var item in list)
             {
-                if (item.Text == "") return false;
+                if (item.Text == "") return true;
+            }
+            return false;
+        }
+        public bool IsEmptyTextEdit(List<TextEdit> list)
+        {
+            foreach (var item in list)
+            {
+                if (item.Text == "") return true;
+            }
+            return false;
+        }
+
+        public bool IsValidMaxLengthTextBox(List<TextBox> list, int maxLength)
+        {
+            foreach (var item in list)
+            {
+                if (item.Text.Length > maxLength) return false;
             }
             return true;
+        }
+
+        public bool IsValidMaxLengthTextEdit(List<TextEdit> list, int maxLength)
+        {
+            foreach (var item in list)
+            {
+                if (item.Text.Length > maxLength) return false;
+            }
+            return true;
+        }
+
+        public bool IsValidMinMax(decimal value, int min, int max)
+        {
+            
+            return value > 0 && value < 1000000;
+        }
+
+        public bool IsValidPhoneNumber(string phoneNumber)
+        {
+            // Biểu thức chính quy để kiểm tra số điện thoại
+            string pattern = @"^\+?[0-9]\d{1,11}$";
+
+            // Tạo đối tượng Regex với pattern
+            Regex regex = new Regex(pattern);
+
+            // Kiểm tra sự khớp của số điện thoại với pattern
+            return regex.IsMatch(phoneNumber);
         }
 
         public bool IsValidEmail(string email)

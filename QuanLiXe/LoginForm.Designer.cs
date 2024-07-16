@@ -1,6 +1,6 @@
 ﻿namespace QuanLiXe
 {
-    partial class LoginForm
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupControlLogin = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.btnResetPass = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelLogin = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -48,6 +50,8 @@
             // 
             // groupControlLogin
             // 
+            this.groupControlLogin.Controls.Add(this.labelControl6);
+            this.groupControlLogin.Controls.Add(this.labelControl5);
             this.groupControlLogin.Controls.Add(this.btnResetPass);
             this.groupControlLogin.Controls.Add(this.btnCancelLogin);
             this.groupControlLogin.Controls.Add(this.labelControl4);
@@ -60,18 +64,43 @@
             this.groupControlLogin.Controls.Add(this.labelControl1);
             this.groupControlLogin.Location = new System.Drawing.Point(33, 12);
             this.groupControlLogin.Name = "groupControlLogin";
-            this.groupControlLogin.Size = new System.Drawing.Size(1069, 355);
+            this.groupControlLogin.Size = new System.Drawing.Size(1069, 362);
             this.groupControlLogin.TabIndex = 0;
             this.groupControlLogin.Text = "Khai báo thông tin tài khoản";
             this.groupControlLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControlLogin_Paint);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Location = new System.Drawing.Point(638, 188);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(17, 33);
+            this.labelControl6.TabIndex = 9;
+            this.labelControl6.Text = "*";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Location = new System.Drawing.Point(638, 111);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(17, 33);
+            this.labelControl5.TabIndex = 8;
+            this.labelControl5.Text = "*";
             // 
             // btnResetPass
             // 
             this.btnResetPass.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetPass.Appearance.Options.UseFont = true;
-            this.btnResetPass.Location = new System.Drawing.Point(60, 277);
+            this.btnResetPass.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnResetPass.ImageOptions.SvgImage")));
+            this.btnResetPass.Location = new System.Drawing.Point(48, 279);
             this.btnResetPass.Name = "btnResetPass";
-            this.btnResetPass.Size = new System.Drawing.Size(167, 47);
+            this.btnResetPass.Size = new System.Drawing.Size(195, 58);
             this.btnResetPass.TabIndex = 7;
             this.btnResetPass.Text = "Đổi mật khẩu";
             this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
@@ -80,10 +109,11 @@
             // 
             this.btnCancelLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelLogin.Appearance.Options.UseFont = true;
-            this.btnCancelLogin.Location = new System.Drawing.Point(881, 256);
+            this.btnCancelLogin.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancelLogin.ImageOptions.SvgImage")));
+            this.btnCancelLogin.Location = new System.Drawing.Point(881, 279);
             this.btnCancelLogin.Name = "btnCancelLogin";
-            this.btnCancelLogin.Size = new System.Drawing.Size(167, 47);
-            this.btnCancelLogin.TabIndex = 2;
+            this.btnCancelLogin.Size = new System.Drawing.Size(167, 58);
+            this.btnCancelLogin.TabIndex = 4;
             this.btnCancelLogin.Text = "Thoát";
             this.btnCancelLogin.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -99,10 +129,11 @@
             // 
             this.btnLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Appearance.Options.UseFont = true;
-            this.btnLogin.Location = new System.Drawing.Point(661, 256);
+            this.btnLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.ImageOptions.Image")));
+            this.btnLogin.Location = new System.Drawing.Point(661, 279);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(167, 47);
-            this.btnLogin.TabIndex = 1;
+            this.btnLogin.Size = new System.Drawing.Size(167, 58);
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -110,7 +141,7 @@
             // 
             this.hyperlinkLabelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hyperlinkLabelControl1.Appearance.Options.UseFont = true;
-            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(542, 264);
+            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(542, 300);
             this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
             this.hyperlinkLabelControl1.Size = new System.Drawing.Size(73, 24);
             this.hyperlinkLabelControl1.TabIndex = 5;
@@ -121,7 +152,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(323, 264);
+            this.labelControl3.Location = new System.Drawing.Point(323, 300);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(213, 24);
             this.labelControl3.TabIndex = 4;
@@ -129,19 +160,19 @@
             // 
             // textEditPassword
             // 
-            this.textEditPassword.Location = new System.Drawing.Point(661, 171);
+            this.textEditPassword.Location = new System.Drawing.Point(661, 185);
             this.textEditPassword.Name = "textEditPassword";
             this.textEditPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEditPassword.Properties.Appearance.Options.UseFont = true;
             this.textEditPassword.Properties.UseSystemPasswordChar = true;
             this.textEditPassword.Size = new System.Drawing.Size(387, 34);
-            this.textEditPassword.TabIndex = 3;
+            this.textEditPassword.TabIndex = 2;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(326, 170);
+            this.labelControl2.Location = new System.Drawing.Point(326, 184);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(132, 34);
             this.labelControl2.TabIndex = 2;
@@ -149,7 +180,7 @@
             // 
             // textEditUserName
             // 
-            this.textEditUserName.Location = new System.Drawing.Point(661, 94);
+            this.textEditUserName.Location = new System.Drawing.Point(661, 108);
             this.textEditUserName.Name = "textEditUserName";
             this.textEditUserName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEditUserName.Properties.Appearance.Options.UseFont = true;
@@ -160,21 +191,21 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(326, 93);
+            this.labelControl1.Location = new System.Drawing.Point(326, 107);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(210, 34);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Tên đăng nhập";
             // 
-            // LoginForm
+            // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 401);
+            this.ClientSize = new System.Drawing.Size(1133, 388);
             this.Controls.Add(this.groupControlLogin);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "LoginForm";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
@@ -200,6 +231,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton btnResetPass;
         public DevExpress.XtraEditors.SimpleButton btnCancelLogin;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }
 

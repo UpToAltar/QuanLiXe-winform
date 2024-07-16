@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\TeamGame\\QuanLiXe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\accountservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\accountservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\automakerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\automakerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\accountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,44 +19,164 @@
       "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\accountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|d:\\teamgame\\quanlixe\\quanlixe\\myaccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\myaccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\automakerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\automakerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|d:\\teamgame\\quanlixe\\quanlixe\\myaccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\myaccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\automakerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\automakerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\vehiclesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\vehiclesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\ownerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\ownerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|d:\\teamgame\\quanlixe\\quanlixe\\helper\\chechimageurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\helper\\chechimageurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\ownerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\ownerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\helper\\exportexcelfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\helper\\exportexcelfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\ownerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\ownerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\vehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\vehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\vehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\vehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\resetpassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\resetpassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\resetpassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\resetpassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\vehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\vehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\ownerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\ownerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\vehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\vehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\vehiclesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\vehiclesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\updatevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\updatevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\deletevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\deletevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\addvehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\addvehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\checklogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\checklogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\checkresetpass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\checkresetpass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\databasehelper\\dbparamssproduce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\databasehelper\\dbparamssproduce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\recentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\recentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\manufacturesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\manufacturesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\activitytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\activitytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\activityhistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\activityhistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\activityhistoryservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\activityhistoryservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\frmreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\frmreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\frmreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\frmreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\helper\\exportexcelfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\helper\\exportexcelfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\vehiclesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\vehiclesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|d:\\teamgame\\quanlixe\\quanlixe\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\myaccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\myaccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\freport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\freport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\deletevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\deletevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\addvehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\addvehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\activityhistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\activityhistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\helper\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\helper\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\updatevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -67,108 +187,51 @@
       "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\helper\\chechimageurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\helper\\chechimageurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\myaccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\myaccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\resetpassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\resetpassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\resetpassform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\resetpassform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\registerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\registerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\helper\\validatehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\helper\\validatehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\ownerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\ownerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\accountform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\accountform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\ownerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\ownerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\HMU_DAO\\TaiSan\\TaiSanDAO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\updatevehiclesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\updatevehiclesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|d:\\teamgame\\quanlixe\\quanlixe\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\recentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\recentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\checklogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\checklogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|d:\\teamgame\\quanlixe\\quanlixe\\automakerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\automakerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\automakerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\automakerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\automakerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\automakerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\vehiclesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\vehiclesservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\deletevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\deletevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\deletevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\deletevehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\ownerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\ownerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\ownerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\ownerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\checkregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\checkregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\services\\checkresetpass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\services\\checkresetpass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\addvehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\addvehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\addvehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\addvehiclesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\myaccountform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\myaccountform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\deletevehiclesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\deletevehiclesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\dto\\manufacturesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|solutionrelative:quanlixe\\dto\\manufacturesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DADF3769-3901-402A-A3E4-DCAF336AD648}|QuanLiXe\\QuanLiXe.csproj|D:\\TeamGame\\QuanLiXe\\quanlixe\\ownerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -190,8 +253,59 @@
       "DocumentGroups": [
         {
           "DockedHeight": 291,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AutomakerForm.cs [Design]",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AutomakerForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\AutomakerForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AutomakerForm.cs [Design]",
+              "RelativeToolTip": "QuanLiXe\\AutomakerForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T01:14:34.677Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AutomakerForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AutomakerForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\AutomakerForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AutomakerForm.cs",
+              "RelativeToolTip": "QuanLiXe\\AutomakerForm.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAowBkAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T01:30:00.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutomakerServices.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\AutomakerServices.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Services\\AutomakerServices.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\AutomakerServices.cs",
+              "RelativeToolTip": "QuanLiXe\\Services\\AutomakerServices.cs",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAQwHoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T02:23:00.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OwnerServices.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\OwnerServices.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Services\\OwnerServices.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\OwnerServices.cs",
+              "RelativeToolTip": "QuanLiXe\\Services\\OwnerServices.cs",
+              "ViewState": "AQIAAGwAAAAAAAAAAADwv4IAAACEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T03:51:20.069Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -212,217 +326,40 @@
               "RelativeDocumentMoniker": "QuanLiXe\\AccountForm.cs",
               "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AccountForm.cs",
               "RelativeToolTip": "QuanLiXe\\AccountForm.cs",
-              "ViewState": "AQIAAHYAAAAAAAAAAAAqwI8AAABoAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAwE0BAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T06:58:43.063Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MyAccountForm.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MyAccountForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\MyAccountForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MyAccountForm.cs",
-              "RelativeToolTip": "QuanLiXe\\MyAccountForm.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAAAnwEoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:43:08.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MyAccountForm.cs [Design]",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MyAccountForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\MyAccountForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MyAccountForm.cs [Design]",
-              "RelativeToolTip": "QuanLiXe\\MyAccountForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:31:56.772Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AccountServices.cs",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\AccountServices.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\Services\\AccountServices.cs",
               "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\AccountServices.cs",
               "RelativeToolTip": "QuanLiXe\\Services\\AccountServices.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAWwDIAAAAMAAAA",
+              "ViewState": "AQIAAIMAAAAAAAAAAAAYwIoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T06:53:08.282Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppDBContext.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\AppDBContext.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\Services\\AppDBContext.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\AppDBContext.cs",
-              "RelativeToolTip": "QuanLiXe\\Services\\AppDBContext.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAewCAAAAB/AAAA",
+              "DocumentIndex": 7,
+              "Title": "OwnerForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\OwnerForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\OwnerForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\OwnerForm.cs",
+              "RelativeToolTip": "QuanLiXe\\OwnerForm.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAiwOIAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T07:33:22.251Z",
+              "WhenOpened": "2024-07-04T03:45:46.569Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ResetPassForm.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ResetPassForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\ResetPassForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ResetPassForm.cs",
-              "RelativeToolTip": "QuanLiXe\\ResetPassForm.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAArwEMAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T09:06:31.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "VehiclesForm.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\VehiclesForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\VehiclesForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\VehiclesForm.cs",
-              "RelativeToolTip": "QuanLiXe\\VehiclesForm.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAIA2wFkAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T01:09:41.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "VehiclesDTO.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\VehiclesDTO.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\DTO\\VehiclesDTO.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\VehiclesDTO.cs",
-              "RelativeToolTip": "QuanLiXe\\DTO\\VehiclesDTO.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAIAwwEcAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T08:51:55.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "VehiclesForm.cs [Design]",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\VehiclesForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\VehiclesForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\VehiclesForm.cs [Design]",
-              "RelativeToolTip": "QuanLiXe\\VehiclesForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T01:09:39.935Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "ExportExcelFile.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ExportExcelFile.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\Helper\\ExportExcelFile.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ExportExcelFile.cs",
-              "RelativeToolTip": "QuanLiXe\\Helper\\ExportExcelFile.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAABMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T07:14:29.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ChechImageUrl.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ChechImageUrl.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\Helper\\ChechImageUrl.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ChechImageUrl.cs",
-              "RelativeToolTip": "QuanLiXe\\Helper\\ChechImageUrl.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwAkAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T03:20:33.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ResetPassForm.cs [Design]",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ResetPassForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\ResetPassForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ResetPassForm.cs [Design]",
-              "RelativeToolTip": "QuanLiXe\\ResetPassForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T08:53:46.611Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UpdateVehiclesForm.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\UpdateVehiclesForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\UpdateVehiclesForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\UpdateVehiclesForm.cs",
-              "RelativeToolTip": "QuanLiXe\\UpdateVehiclesForm.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAMwGEAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T01:08:31.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UpdateVehiclesForm.cs [Design]",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\UpdateVehiclesForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\UpdateVehiclesForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\UpdateVehiclesForm.cs [Design]",
-              "RelativeToolTip": "QuanLiXe\\UpdateVehiclesForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T01:20:51.949Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\LoginForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\LoginForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\LoginForm.cs",
-              "RelativeToolTip": "QuanLiXe\\LoginForm.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAjwDIAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T07:22:24.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\LoginForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\LoginForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\LoginForm.cs [Design]",
-              "RelativeToolTip": "QuanLiXe\\LoginForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T06:41:00.849Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ValidateHelper.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ValidateHelper.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\Helper\\ValidateHelper.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ValidateHelper.cs",
-              "RelativeToolTip": "QuanLiXe\\Helper\\ValidateHelper.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAQwCsAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T02:14:18.117Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
               "Title": "OwnerForm.cs [Design]",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\OwnerForm.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\OwnerForm.cs",
@@ -434,45 +371,148 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "OwnerForm.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\OwnerForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\OwnerForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\OwnerForm.cs",
-              "RelativeToolTip": "QuanLiXe\\OwnerForm.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAAAGcAAAAMAAAA",
+              "DocumentIndex": 9,
+              "Title": "packages.config",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\packages.config",
+              "RelativeDocumentMoniker": "QuanLiXe\\packages.config",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\packages.config",
+              "RelativeToolTip": "QuanLiXe\\packages.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-07-12T07:55:46.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ResetPassForm.cs [Design]",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ResetPassForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\ResetPassForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ResetPassForm.cs [Design]",
+              "RelativeToolTip": "QuanLiXe\\ResetPassForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T03:45:46.569Z",
+              "WhenOpened": "2024-07-01T08:53:46.611Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VehiclesForm.cs [Design]",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\VehiclesForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\VehiclesForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\VehiclesForm.cs [Design]",
+              "RelativeToolTip": "QuanLiXe\\VehiclesForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T01:09:39.935Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OwnerDTO.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\OwnerDTO.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\DTO\\OwnerDTO.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\OwnerDTO.cs",
+              "RelativeToolTip": "QuanLiXe\\DTO\\OwnerDTO.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAqwB0AAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T10:03:04.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddVehiclesForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AddVehiclesForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\AddVehiclesForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AddVehiclesForm.cs",
+              "RelativeToolTip": "QuanLiXe\\AddVehiclesForm.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAvwGcAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T09:55:54.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UpdateVehiclesForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\UpdateVehiclesForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\UpdateVehiclesForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\UpdateVehiclesForm.cs",
+              "RelativeToolTip": "QuanLiXe\\UpdateVehiclesForm.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAnwKsAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T01:08:31.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "VehiclesForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\VehiclesForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\VehiclesForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\VehiclesForm.cs",
+              "RelativeToolTip": "QuanLiXe\\VehiclesForm.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T01:09:41.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DeleteVehiclesForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DeleteVehiclesForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\DeleteVehiclesForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DeleteVehiclesForm.cs",
+              "RelativeToolTip": "QuanLiXe\\DeleteVehiclesForm.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAvwH8AAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T01:08:13.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "VehiclesServices.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\VehiclesServices.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Services\\VehiclesServices.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\VehiclesServices.cs",
+              "RelativeToolTip": "QuanLiXe\\Services\\VehiclesServices.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAmwFsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T08:45:52.088Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MainForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\MainForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MainForm.cs [Design]",
-              "RelativeToolTip": "QuanLiXe\\MainForm.cs [Design]",
+              "Title": "CheckLogin.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\CheckLogin.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Services\\CheckLogin.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\CheckLogin.cs",
+              "RelativeToolTip": "QuanLiXe\\Services\\CheckLogin.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAQwCUAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T10:19:48.269Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-07-01T07:38:28.083Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 19,
               "Title": "RegisterForm.cs",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\RegisterForm.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\RegisterForm.cs",
               "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\RegisterForm.cs",
               "RelativeToolTip": "QuanLiXe\\RegisterForm.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAnwEQAAAAMAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAnwDwAAAC/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-01T08:15:07.701Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 18,
               "Title": "RegisterForm.cs [Design]",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\RegisterForm.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\RegisterForm.cs",
@@ -484,15 +524,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MainForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\MainForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MainForm.cs",
-              "RelativeToolTip": "QuanLiXe\\MainForm.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAIA6wEkAAAAsAAAA",
+              "DocumentIndex": 22,
+              "Title": "DbParamsSProduce.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DatabaseHelper\\DbParamsSProduce.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\DatabaseHelper\\DbParamsSProduce.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DatabaseHelper\\DbParamsSProduce.cs",
+              "RelativeToolTip": "QuanLiXe\\DatabaseHelper\\DbParamsSProduce.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:46:43.365Z",
+              "WhenOpened": "2024-07-12T09:44:42.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CheckResetPass.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\CheckResetPass.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Services\\CheckResetPass.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\CheckResetPass.cs",
+              "RelativeToolTip": "QuanLiXe\\Services\\CheckResetPass.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAowD8AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T09:09:10.233Z",
               "EditorCaption": ""
             },
             {
@@ -503,7 +556,7 @@
               "RelativeDocumentMoniker": "QuanLiXe\\DTO\\RecentUser.cs",
               "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\RecentUser.cs",
               "RelativeToolTip": "QuanLiXe\\DTO\\RecentUser.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAswBIAAAAiAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T07:57:58.528Z",
               "EditorCaption": ""
@@ -511,176 +564,420 @@
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "CheckLogin.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\CheckLogin.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\Services\\CheckLogin.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\CheckLogin.cs",
-              "RelativeToolTip": "QuanLiXe\\Services\\CheckLogin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAZAAAA",
+              "Title": "ManufacturesDTO.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\ManufacturesDTO.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\DTO\\ManufacturesDTO.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\ManufacturesDTO.cs",
+              "RelativeToolTip": "QuanLiXe\\DTO\\ManufacturesDTO.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAYwBcAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T07:38:28.083Z",
+              "WhenOpened": "2024-07-04T10:27:55.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ActivityType.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\ActivityType.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\DTO\\ActivityType.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\ActivityType.cs",
+              "RelativeToolTip": "QuanLiXe\\DTO\\ActivityType.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAYwCoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-13T14:09:13.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\UserDTO.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\DTO\\UserDTO.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\UserDTO.cs",
+              "RelativeToolTip": "QuanLiXe\\DTO\\UserDTO.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwCMAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T07:35:13.612Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
-              "Title": "AutomakerForm.cs [Design]",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AutomakerForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\AutomakerForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AutomakerForm.cs [Design]",
-              "RelativeToolTip": "QuanLiXe\\AutomakerForm.cs [Design]",
+              "Title": "ActivityHistoryForm.cs [Design]",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ActivityHistoryForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\ActivityHistoryForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ActivityHistoryForm.cs [Design]",
+              "RelativeToolTip": "QuanLiXe\\ActivityHistoryForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T01:14:34.677Z",
+              "WhenOpened": "2024-07-13T14:05:44.514Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "AutomakerForm.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AutomakerForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\AutomakerForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AutomakerForm.cs",
-              "RelativeToolTip": "QuanLiXe\\AutomakerForm.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAAB8AAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T01:30:00.152Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 28,
-              "Title": "AutomakerServices.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\AutomakerServices.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\Services\\AutomakerServices.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\AutomakerServices.cs",
-              "RelativeToolTip": "QuanLiXe\\Services\\AutomakerServices.cs",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAnwGoAAAAMAAAA",
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Services\\AppDBContext.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\AppDBContext.cs",
+              "RelativeToolTip": "QuanLiXe\\Services\\AppDBContext.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAgwO4AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T02:23:00.6Z",
+              "WhenOpened": "2024-07-01T07:33:22.251Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 29,
-              "Title": "VehiclesServices.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\VehiclesServices.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\Services\\VehiclesServices.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\VehiclesServices.cs",
-              "RelativeToolTip": "QuanLiXe\\Services\\VehiclesServices.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAAAewH0AAAAMAAAA",
+              "Title": "ActivityHistoryServices.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\ActivityHistoryServices.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Services\\ActivityHistoryServices.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\ActivityHistoryServices.cs",
+              "RelativeToolTip": "QuanLiXe\\Services\\ActivityHistoryServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T08:45:52.088Z",
+              "WhenOpened": "2024-07-15T01:22:23.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 30,
-              "Title": "DeleteVehiclesForm.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DeleteVehiclesForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\DeleteVehiclesForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DeleteVehiclesForm.cs",
-              "RelativeToolTip": "QuanLiXe\\DeleteVehiclesForm.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAjwDYAAAAMAAAA",
+              "Title": "FrmReport.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\FrmReport.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\FrmReport.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\FrmReport.cs",
+              "RelativeToolTip": "QuanLiXe\\FrmReport.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAmwCYAAABiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T01:08:13.236Z"
+              "WhenOpened": "2024-07-15T08:57:00.316Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 31,
+              "Title": "FrmReport.cs [Design]",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\FrmReport.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\FrmReport.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\FrmReport.cs [Design]",
+              "RelativeToolTip": "QuanLiXe\\FrmReport.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T08:56:28.106Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ExportExcelFile.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ExportExcelFile.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Helper\\ExportExcelFile.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ExportExcelFile.cs",
+              "RelativeToolTip": "QuanLiXe\\Helper\\ExportExcelFile.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAvwCMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T07:14:29.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "VehiclesDTO.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\VehiclesDTO.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\DTO\\VehiclesDTO.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\VehiclesDTO.cs",
+              "RelativeToolTip": "QuanLiXe\\DTO\\VehiclesDTO.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAwDMAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T08:51:55.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\LoginForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\LoginForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\LoginForm.cs [Design]",
+              "RelativeToolTip": "QuanLiXe\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T06:41:00.849Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MainForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\MainForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MainForm.cs [Design]",
+              "RelativeToolTip": "QuanLiXe\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T10:19:48.269Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "FReport.rdlc [Design]",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\FReport.rdlc",
+              "RelativeDocumentMoniker": "QuanLiXe\\FReport.rdlc",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\FReport.rdlc [Design]",
+              "RelativeToolTip": "QuanLiXe\\FReport.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-07-15T07:59:00.008Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "MyAccountForm.cs [Design]",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MyAccountForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\MyAccountForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MyAccountForm.cs [Design]",
+              "RelativeToolTip": "QuanLiXe\\MyAccountForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T02:31:56.772Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
               "Title": "DeleteVehiclesForm.cs [Design]",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DeleteVehiclesForm.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\DeleteVehiclesForm.cs",
               "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DeleteVehiclesForm.cs [Design]",
               "RelativeToolTip": "QuanLiXe\\DeleteVehiclesForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T01:05:08.38Z"
+              "WhenOpened": "2024-07-05T01:05:08.38Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "OwnerServices.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\OwnerServices.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\Services\\OwnerServices.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\OwnerServices.cs",
-              "RelativeToolTip": "QuanLiXe\\Services\\OwnerServices.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAYwGIAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T03:51:20.069Z"
+              "DocumentIndex": 39,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\App.config",
+              "RelativeDocumentMoniker": "QuanLiXe\\App.config",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\App.config",
+              "RelativeToolTip": "QuanLiXe\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-07-08T04:24:43.978Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "OwnerDTO.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\OwnerDTO.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\DTO\\OwnerDTO.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\OwnerDTO.cs",
-              "RelativeToolTip": "QuanLiXe\\DTO\\OwnerDTO.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAAA8AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T10:03:04.161Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "CheckResetPass.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\CheckResetPass.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\Services\\CheckResetPass.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\CheckResetPass.cs",
-              "RelativeToolTip": "QuanLiXe\\Services\\CheckResetPass.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T09:09:10.233Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "CheckRegister.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\CheckRegister.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\Services\\CheckRegister.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Services\\CheckRegister.cs",
-              "RelativeToolTip": "QuanLiXe\\Services\\CheckRegister.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwDYAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T08:34:17.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "AddVehiclesForm.cs [Design]",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AddVehiclesForm.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\AddVehiclesForm.cs",
               "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AddVehiclesForm.cs [Design]",
               "RelativeToolTip": "QuanLiXe\\AddVehiclesForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T09:27:59.6Z"
+              "WhenOpened": "2024-07-04T09:27:59.6Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
+              "Title": "ActivityHistoryForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ActivityHistoryForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\ActivityHistoryForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ActivityHistoryForm.cs",
+              "RelativeToolTip": "QuanLiXe\\ActivityHistoryForm.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAcwF8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T01:21:33.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Program.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\Program.cs",
               "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Program.cs",
               "RelativeToolTip": "QuanLiXe\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAmwBQAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-01T07:22:10.004Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "AddVehiclesForm.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AddVehiclesForm.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\AddVehiclesForm.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AddVehiclesForm.cs",
-              "RelativeToolTip": "QuanLiXe\\AddVehiclesForm.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAAAFAAAAAeAAAA",
+              "DocumentIndex": 43,
+              "Title": "PasswordHelper.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\PasswordHelper.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Helper\\PasswordHelper.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\PasswordHelper.cs",
+              "RelativeToolTip": "QuanLiXe\\Helper\\PasswordHelper.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwCoAAABrAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T09:55:54.69Z"
+              "WhenOpened": "2024-07-12T01:47:16.469Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 44,
+              "Title": "UpdateVehiclesForm.cs [Design]",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\UpdateVehiclesForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\UpdateVehiclesForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\UpdateVehiclesForm.cs [Design]",
+              "RelativeToolTip": "QuanLiXe\\UpdateVehiclesForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T01:20:51.949Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\LoginForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\LoginForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\LoginForm.cs",
+              "RelativeToolTip": "QuanLiXe\\LoginForm.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAnwEQAAADZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T07:22:24.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MainForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\MainForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MainForm.cs",
+              "RelativeToolTip": "QuanLiXe\\MainForm.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAApwFIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T02:46:43.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ChechImageUrl.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ChechImageUrl.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Helper\\ChechImageUrl.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ChechImageUrl.cs",
+              "RelativeToolTip": "QuanLiXe\\Helper\\ChechImageUrl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T03:20:33.422Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "MyAccountForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MyAccountForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\MyAccountForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MyAccountForm.cs",
+              "RelativeToolTip": "QuanLiXe\\MyAccountForm.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAADgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T02:43:08.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ResetPassForm.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ResetPassForm.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\ResetPassForm.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ResetPassForm.cs",
+              "RelativeToolTip": "QuanLiXe\\ResetPassForm.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAMwE8AAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T09:06:31.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "RegisterForm.Designer.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\RegisterForm.Designer.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\RegisterForm.Designer.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\RegisterForm.Designer.cs",
+              "RelativeToolTip": "QuanLiXe\\RegisterForm.Designer.cs",
+              "ViewState": "AQIAAAwBAAAAAAAAAAAIwBwBAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-13T03:19:52.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ResetPassForm.Designer.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ResetPassForm.Designer.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\ResetPassForm.Designer.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\ResetPassForm.Designer.cs",
+              "RelativeToolTip": "QuanLiXe\\ResetPassForm.Designer.cs",
+              "ViewState": "AQIAAP8AAAAAAAAAAAAIwA8BAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-13T03:20:35.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ValidateHelper.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ValidateHelper.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\Helper\\ValidateHelper.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\Helper\\ValidateHelper.cs",
+              "RelativeToolTip": "QuanLiXe\\Helper\\ValidateHelper.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAmwCkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T02:14:18.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "AccountForm.Designer.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AccountForm.Designer.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\AccountForm.Designer.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AccountForm.Designer.cs",
+              "RelativeToolTip": "QuanLiXe\\AccountForm.Designer.cs",
+              "ViewState": "AQIAAAsBAAAAAAAAAAAIwBgBAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T08:51:42.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "TaiSanDAO.cs",
+              "DocumentMoniker": "D:\\HMU_DAO\\TaiSan\\TaiSanDAO.cs",
+              "RelativeDocumentMoniker": "..\\..\\HMU_DAO\\TaiSan\\TaiSanDAO.cs",
+              "ToolTip": "D:\\HMU_DAO\\TaiSan\\TaiSanDAO.cs",
+              "RelativeToolTip": "..\\..\\HMU_DAO\\TaiSan\\TaiSanDAO.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAIBZwAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T10:00:36.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "UpdateVehiclesForm.Designer.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\UpdateVehiclesForm.Designer.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\UpdateVehiclesForm.Designer.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\UpdateVehiclesForm.Designer.cs",
+              "RelativeToolTip": "QuanLiXe\\UpdateVehiclesForm.Designer.cs",
+              "ViewState": "AQIAAHIBAAAAAAAAAAAnwIIBAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:52.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "MyAccountForm.Designer.cs",
+              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MyAccountForm.Designer.cs",
+              "RelativeDocumentMoniker": "QuanLiXe\\MyAccountForm.Designer.cs",
+              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MyAccountForm.Designer.cs",
+              "RelativeToolTip": "QuanLiXe\\MyAccountForm.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T01:52:56.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
               "Title": "DeleteVehiclesForm.Designer.cs",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DeleteVehiclesForm.Designer.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\DeleteVehiclesForm.Designer.cs",
@@ -688,35 +985,12 @@
               "RelativeToolTip": "QuanLiXe\\DeleteVehiclesForm.Designer.cs",
               "ViewState": "AQIAAIIAAAAAAAAAAAAnwJMAAABwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T01:15:57.253Z"
+              "WhenOpened": "2024-07-05T01:15:57.253Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "ManufacturesDTO.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\ManufacturesDTO.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\DTO\\ManufacturesDTO.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\ManufacturesDTO.cs",
-              "RelativeToolTip": "QuanLiXe\\DTO\\ManufacturesDTO.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAYwBcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T10:27:55.92Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "UserDTO.cs",
-              "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\UserDTO.cs",
-              "RelativeDocumentMoniker": "QuanLiXe\\DTO\\UserDTO.cs",
-              "ToolTip": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\DTO\\UserDTO.cs",
-              "RelativeToolTip": "QuanLiXe\\DTO\\UserDTO.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T07:35:13.612Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 58,
               "Title": "OwnerForm.Designer.cs",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\OwnerForm.Designer.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\OwnerForm.Designer.cs",
@@ -729,7 +1003,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 59,
               "Title": "AutomakerForm.Designer.cs",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\AutomakerForm.Designer.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\AutomakerForm.Designer.cs",
@@ -737,11 +1011,12 @@
               "RelativeToolTip": "QuanLiXe\\AutomakerForm.Designer.cs",
               "ViewState": "AQIAABEAAAAAAAAAAIBZwBYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T02:34:22.281Z"
+              "WhenOpened": "2024-07-04T02:34:22.281Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 60,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "D:\\TeamGame\\QuanLiXe\\QuanLiXe\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "QuanLiXe\\MainForm.Designer.cs",
@@ -749,8 +1024,7 @@
               "RelativeToolTip": "QuanLiXe\\MainForm.Designer.cs",
               "ViewState": "AQIAABEAAAAAAAAAAIBZwBYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T01:18:10.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T01:18:10.708Z"
             }
           ]
         },

@@ -1,6 +1,6 @@
 ﻿namespace QuanLiXe
 {
-    partial class DeleteVehiclesForm
+    partial class frmDeleteVehicles
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteVehiclesForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDeleteVehicles));
             this.btnSearchVehiclesToUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.tbVehiclesId = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.tbVehiclesAcceleration = new System.Windows.Forms.NumericUpDown();
-            this.tbVehicleTopSpeed = new System.Windows.Forms.NumericUpDown();
-            this.tbVehiclesWeigth = new System.Windows.Forms.NumericUpDown();
+            this.nudVehiclesAcceleration = new System.Windows.Forms.NumericUpDown();
+            this.nudVehicleTopSpeed = new System.Windows.Forms.NumericUpDown();
+            this.nudVehiclesWeigth = new System.Windows.Forms.NumericUpDown();
             this.btnDeleteVehiclesConfirm = new DevExpress.XtraEditors.SimpleButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.tbVehiclesManufactures = new System.Windows.Forms.ComboBox();
+            this.cboVehiclesManufactures = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.tbVehiclesOwner = new System.Windows.Forms.ComboBox();
+            this.cboVehiclesOwner = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tbVehiclesEngineDisplacement = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,9 +56,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbVehiclesName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehiclesAcceleration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehicleTopSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehiclesWeigth)).BeginInit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehiclesAcceleration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehicleTopSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehiclesWeigth)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchVehiclesToUpdate
@@ -70,7 +71,7 @@
             this.btnSearchVehiclesToUpdate.Location = new System.Drawing.Point(948, 29);
             this.btnSearchVehiclesToUpdate.Name = "btnSearchVehiclesToUpdate";
             this.btnSearchVehiclesToUpdate.Size = new System.Drawing.Size(140, 71);
-            this.btnSearchVehiclesToUpdate.TabIndex = 84;
+            this.btnSearchVehiclesToUpdate.TabIndex = 14;
             this.btnSearchVehiclesToUpdate.Text = "Tìm xe";
             this.btnSearchVehiclesToUpdate.Click += new System.EventHandler(this.btnSearchVehiclesToUpdate_Click);
             // 
@@ -80,57 +81,63 @@
             this.tbVehiclesId.Location = new System.Drawing.Point(595, 51);
             this.tbVehiclesId.Name = "tbVehiclesId";
             this.tbVehiclesId.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesId.TabIndex = 83;
+            this.tbVehiclesId.TabIndex = 13;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(542, 54);
+            this.label13.Location = new System.Drawing.Point(486, 54);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 28);
+            this.label13.Size = new System.Drawing.Size(80, 28);
             this.label13.TabIndex = 82;
-            this.label13.Text = "ID";
+            this.label13.Text = "Mã số";
             // 
-            // tbVehiclesAcceleration
+            // nudVehiclesAcceleration
             // 
-            this.tbVehiclesAcceleration.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehiclesAcceleration.Location = new System.Drawing.Point(819, 264);
-            this.tbVehiclesAcceleration.Maximum = new decimal(new int[] {
+            this.nudVehiclesAcceleration.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudVehiclesAcceleration.Location = new System.Drawing.Point(819, 264);
+            this.nudVehiclesAcceleration.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.tbVehiclesAcceleration.Name = "tbVehiclesAcceleration";
-            this.tbVehiclesAcceleration.Size = new System.Drawing.Size(319, 35);
-            this.tbVehiclesAcceleration.TabIndex = 81;
+            this.nudVehiclesAcceleration.Name = "nudVehiclesAcceleration";
+            this.nudVehiclesAcceleration.ReadOnly = true;
+            this.nudVehiclesAcceleration.Size = new System.Drawing.Size(319, 35);
+            this.nudVehiclesAcceleration.TabIndex = 10;
+            this.nudVehiclesAcceleration.TabStop = false;
             // 
-            // tbVehicleTopSpeed
+            // nudVehicleTopSpeed
             // 
-            this.tbVehicleTopSpeed.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehicleTopSpeed.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tbVehicleTopSpeed.Location = new System.Drawing.Point(819, 156);
-            this.tbVehicleTopSpeed.Maximum = new decimal(new int[] {
+            this.nudVehicleTopSpeed.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudVehicleTopSpeed.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.nudVehicleTopSpeed.Location = new System.Drawing.Point(819, 156);
+            this.nudVehicleTopSpeed.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.tbVehicleTopSpeed.Name = "tbVehicleTopSpeed";
-            this.tbVehicleTopSpeed.Size = new System.Drawing.Size(319, 35);
-            this.tbVehicleTopSpeed.TabIndex = 80;
+            this.nudVehicleTopSpeed.Name = "nudVehicleTopSpeed";
+            this.nudVehicleTopSpeed.ReadOnly = true;
+            this.nudVehicleTopSpeed.Size = new System.Drawing.Size(319, 35);
+            this.nudVehicleTopSpeed.TabIndex = 9;
+            this.nudVehicleTopSpeed.TabStop = false;
             // 
-            // tbVehiclesWeigth
+            // nudVehiclesWeigth
             // 
-            this.tbVehiclesWeigth.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehiclesWeigth.Location = new System.Drawing.Point(430, 479);
-            this.tbVehiclesWeigth.Maximum = new decimal(new int[] {
+            this.nudVehiclesWeigth.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudVehiclesWeigth.Location = new System.Drawing.Point(430, 479);
+            this.nudVehiclesWeigth.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.tbVehiclesWeigth.Name = "tbVehiclesWeigth";
-            this.tbVehiclesWeigth.Size = new System.Drawing.Size(319, 35);
-            this.tbVehiclesWeigth.TabIndex = 79;
+            this.nudVehiclesWeigth.Name = "nudVehiclesWeigth";
+            this.nudVehiclesWeigth.ReadOnly = true;
+            this.nudVehiclesWeigth.Size = new System.Drawing.Size(319, 35);
+            this.nudVehiclesWeigth.TabIndex = 8;
+            this.nudVehiclesWeigth.TabStop = false;
             // 
             // btnDeleteVehiclesConfirm
             // 
@@ -143,7 +150,7 @@
             this.btnDeleteVehiclesConfirm.Location = new System.Drawing.Point(820, 458);
             this.btnDeleteVehiclesConfirm.Name = "btnDeleteVehiclesConfirm";
             this.btnDeleteVehiclesConfirm.Size = new System.Drawing.Size(230, 71);
-            this.btnDeleteVehiclesConfirm.TabIndex = 78;
+            this.btnDeleteVehiclesConfirm.TabIndex = 1;
             this.btnDeleteVehiclesConfirm.Text = "Xóa xe";
             this.btnDeleteVehiclesConfirm.Click += new System.EventHandler(this.btnDeleteVehiclesConfirm_Click);
             // 
@@ -157,14 +164,15 @@
             this.label12.TabIndex = 77;
             this.label12.Text = "Cân nặng";
             // 
-            // tbVehiclesManufactures
+            // cboVehiclesManufactures
             // 
-            this.tbVehiclesManufactures.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehiclesManufactures.FormattingEnabled = true;
-            this.tbVehiclesManufactures.Location = new System.Drawing.Point(46, 478);
-            this.tbVehiclesManufactures.Name = "tbVehiclesManufactures";
-            this.tbVehiclesManufactures.Size = new System.Drawing.Size(317, 36);
-            this.tbVehiclesManufactures.TabIndex = 76;
+            this.cboVehiclesManufactures.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboVehiclesManufactures.FormattingEnabled = true;
+            this.cboVehiclesManufactures.Location = new System.Drawing.Point(46, 478);
+            this.cboVehiclesManufactures.Name = "cboVehiclesManufactures";
+            this.cboVehiclesManufactures.Size = new System.Drawing.Size(317, 36);
+            this.cboVehiclesManufactures.TabIndex = 4;
+            this.cboVehiclesManufactures.TabStop = false;
             // 
             // label11
             // 
@@ -176,14 +184,15 @@
             this.label11.TabIndex = 75;
             this.label11.Text = "Hãng xe";
             // 
-            // tbVehiclesOwner
+            // cboVehiclesOwner
             // 
-            this.tbVehiclesOwner.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehiclesOwner.FormattingEnabled = true;
-            this.tbVehiclesOwner.Location = new System.Drawing.Point(430, 156);
-            this.tbVehiclesOwner.Name = "tbVehiclesOwner";
-            this.tbVehiclesOwner.Size = new System.Drawing.Size(317, 36);
-            this.tbVehiclesOwner.TabIndex = 74;
+            this.cboVehiclesOwner.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboVehiclesOwner.FormattingEnabled = true;
+            this.cboVehiclesOwner.Location = new System.Drawing.Point(430, 156);
+            this.cboVehiclesOwner.Name = "cboVehiclesOwner";
+            this.cboVehiclesOwner.Size = new System.Drawing.Size(317, 36);
+            this.cboVehiclesOwner.TabIndex = 5;
+            this.cboVehiclesOwner.TabStop = false;
             // 
             // label10
             // 
@@ -192,17 +201,19 @@
             this.label10.ForeColor = System.Drawing.Color.Tomato;
             this.label10.Location = new System.Drawing.Point(38, 37);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(321, 48);
+            this.label10.Size = new System.Drawing.Size(168, 48);
             this.label10.TabIndex = 73;
-            this.label10.Text = "Xóa xe theo ID";
+            this.label10.Text = "Xóa xe ";
             // 
             // tbVehiclesEngineDisplacement
             // 
             this.tbVehiclesEngineDisplacement.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbVehiclesEngineDisplacement.Location = new System.Drawing.Point(820, 370);
             this.tbVehiclesEngineDisplacement.Name = "tbVehiclesEngineDisplacement";
+            this.tbVehiclesEngineDisplacement.ReadOnly = true;
             this.tbVehiclesEngineDisplacement.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesEngineDisplacement.TabIndex = 72;
+            this.tbVehiclesEngineDisplacement.TabIndex = 11;
+            this.tbVehiclesEngineDisplacement.TabStop = false;
             // 
             // label7
             // 
@@ -239,8 +250,10 @@
             this.tbVehiclesFuelType.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbVehiclesFuelType.Location = new System.Drawing.Point(430, 370);
             this.tbVehiclesFuelType.Name = "tbVehiclesFuelType";
+            this.tbVehiclesFuelType.ReadOnly = true;
             this.tbVehiclesFuelType.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesFuelType.TabIndex = 68;
+            this.tbVehiclesFuelType.TabIndex = 7;
+            this.tbVehiclesFuelType.TabStop = false;
             // 
             // label6
             // 
@@ -257,8 +270,10 @@
             this.tbVehiclesColor.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbVehiclesColor.Location = new System.Drawing.Point(46, 370);
             this.tbVehiclesColor.Name = "tbVehiclesColor";
+            this.tbVehiclesColor.ReadOnly = true;
             this.tbVehiclesColor.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesColor.TabIndex = 66;
+            this.tbVehiclesColor.TabIndex = 3;
+            this.tbVehiclesColor.TabStop = false;
             // 
             // label5
             // 
@@ -275,8 +290,10 @@
             this.tbVehiclesEngineType.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbVehiclesEngineType.Location = new System.Drawing.Point(430, 263);
             this.tbVehiclesEngineType.Name = "tbVehiclesEngineType";
+            this.tbVehiclesEngineType.ReadOnly = true;
             this.tbVehiclesEngineType.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesEngineType.TabIndex = 64;
+            this.tbVehiclesEngineType.TabIndex = 6;
+            this.tbVehiclesEngineType.TabStop = false;
             // 
             // label4
             // 
@@ -293,8 +310,10 @@
             this.tbVehiclesLiscensePlate.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbVehiclesLiscensePlate.Location = new System.Drawing.Point(46, 263);
             this.tbVehiclesLiscensePlate.Name = "tbVehiclesLiscensePlate";
+            this.tbVehiclesLiscensePlate.ReadOnly = true;
             this.tbVehiclesLiscensePlate.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesLiscensePlate.TabIndex = 62;
+            this.tbVehiclesLiscensePlate.TabIndex = 2;
+            this.tbVehiclesLiscensePlate.TabStop = false;
             // 
             // label3
             // 
@@ -321,8 +340,10 @@
             this.tbVehiclesName.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbVehiclesName.Location = new System.Drawing.Point(46, 156);
             this.tbVehiclesName.Name = "tbVehiclesName";
+            this.tbVehiclesName.ReadOnly = true;
             this.tbVehiclesName.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesName.TabIndex = 59;
+            this.tbVehiclesName.TabIndex = 1;
+            this.tbVehiclesName.TabStop = false;
             // 
             // label1
             // 
@@ -334,22 +355,36 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Tên xe";
             // 
-            // DeleteVehiclesForm
+            // labelControl1
             // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(572, 54);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(17, 33);
+            this.labelControl1.TabIndex = 94;
+            this.labelControl1.Text = "*";
+            // 
+            // frmDeleteVehicles
+            // 
+            this.AcceptButton = this.btnDeleteVehiclesConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 562);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnSearchVehiclesToUpdate);
             this.Controls.Add(this.tbVehiclesId);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.tbVehiclesAcceleration);
-            this.Controls.Add(this.tbVehicleTopSpeed);
-            this.Controls.Add(this.tbVehiclesWeigth);
+            this.Controls.Add(this.nudVehiclesAcceleration);
+            this.Controls.Add(this.nudVehicleTopSpeed);
+            this.Controls.Add(this.nudVehiclesWeigth);
             this.Controls.Add(this.btnDeleteVehiclesConfirm);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.tbVehiclesManufactures);
+            this.Controls.Add(this.cboVehiclesManufactures);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.tbVehiclesOwner);
+            this.Controls.Add(this.cboVehiclesOwner);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tbVehiclesEngineDisplacement);
             this.Controls.Add(this.label7);
@@ -366,11 +401,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbVehiclesName);
             this.Controls.Add(this.label1);
-            this.Name = "DeleteVehiclesForm";
-            this.Text = "DeleteVehiclesForm";
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehiclesAcceleration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehicleTopSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehiclesWeigth)).EndInit();
+            this.Name = "frmDeleteVehicles";
+            this.Text = "Xóa xe";
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehiclesAcceleration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehicleTopSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehiclesWeigth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,14 +416,14 @@
         private DevExpress.XtraEditors.SimpleButton btnSearchVehiclesToUpdate;
         private System.Windows.Forms.TextBox tbVehiclesId;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.NumericUpDown tbVehiclesAcceleration;
-        private System.Windows.Forms.NumericUpDown tbVehicleTopSpeed;
-        private System.Windows.Forms.NumericUpDown tbVehiclesWeigth;
+        private System.Windows.Forms.NumericUpDown nudVehiclesAcceleration;
+        private System.Windows.Forms.NumericUpDown nudVehicleTopSpeed;
+        private System.Windows.Forms.NumericUpDown nudVehiclesWeigth;
         private DevExpress.XtraEditors.SimpleButton btnDeleteVehiclesConfirm;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox tbVehiclesManufactures;
+        private System.Windows.Forms.ComboBox cboVehiclesManufactures;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox tbVehiclesOwner;
+        private System.Windows.Forms.ComboBox cboVehiclesOwner;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbVehiclesEngineDisplacement;
         private System.Windows.Forms.Label label7;
@@ -405,5 +440,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbVehiclesName;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

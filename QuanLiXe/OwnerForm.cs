@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Columns;
+using QuanLiXe.DTO;
 using QuanLiXe.Helper;
 using QuanLiXe.Services;
 using System;
@@ -14,51 +15,102 @@ using System.Windows.Forms;
 
 namespace QuanLiXe
 {
-    public partial class OwnerForm : DevExpress.XtraEditors.XtraForm
+    public partial class frmOwner : DevExpress.XtraEditors.XtraForm
     {
-        public OwnerForm()
+        public frmOwner()
         {
             InitializeComponent();
-            LoadData();
+            LoadData(0 ,DateTime.Now, DateTime.Now);
         }
 
-        void LoadData()
+        void LoadData(int containDate, DateTime from, DateTime to)
         {
-            var gridId = new GridColumn() { Caption = "ID", Visible = true, FieldName = "OwnerId" };
+            var gridId = new GridColumn() { Caption = "Mã số", Visible = true, FieldName = "OwnerId" };
             var gridFullName = new GridColumn() { Caption = "Tên đầy đủ", Visible = true, FieldName = "FullName" };
             var gridEmail = new GridColumn() { Caption = "Email", Visible = true, FieldName = "Email" };
             var gridPhoneNumber = new GridColumn() { Caption = "Số điện thoại", Visible = true, FieldName = "PhoneNumber" };
             var gridAddress = new GridColumn() { Caption = "Địa chỉ", Visible = true, FieldName = "Address" };
+            var gridCreatedAt = new GridColumn() { Caption = "Ngày tạo", Visible = true, FieldName = "CreatedAt" };
+            gridCreatedAt.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            gridCreatedAt.DisplayFormat.FormatString = "dd/MM/yyyy";
+            var gridUpdatedAt = new GridColumn() { Caption = "Ngày cập nhật", Visible = true, FieldName = "UpdatedAt" };
+            gridUpdatedAt.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            gridUpdatedAt.DisplayFormat.FormatString = "dd/MM/yyyy";
 
             gridViewOwner.Columns.Clear();
-            gridViewOwner.Columns.AddRange(new GridColumn[] { gridId, gridFullName, gridEmail, gridPhoneNumber, gridAddress });
+            gridViewOwner.Columns.AddRange(new GridColumn[] { gridId, gridFullName, gridEmail, gridPhoneNumber, gridAddress,gridCreatedAt,gridUpdatedAt });
 
-            dataGridViewOwner.DataSource = OwnerServices.Instance.Load();
+            string msgError = "";
+            if(containDate == 0) dataGridViewOwner.DataSource = OwnerServices.Instance.Load(out msgError);
+            else dataGridViewOwner.DataSource = OwnerServices.Instance.LoadByDate(out msgError, from, to);
+
+            if(msgError != "")
+            {
+                MessageBox.Show(msgError, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnReadOwner_Click(object sender, EventArgs e)
         {
-            LoadData();
+            if (dtOwnerFrom.EditValue == null && dtOwnerTo.EditValue == null)
+            {
+                LoadData(0, DateTime.Now, DateTime.Now);
+                return;
+            }
+            else if (dtOwnerFrom.EditValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (dtOwnerTo.EditValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn ngày kết thúc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (dtOwnerFrom.DateTimeOffset.DateTime > dtOwnerTo.DateTimeOffset.DateTime)
+            {
+                MessageBox.Show("Ngày bắt đầu không thể lớn hơn ngày kết thúc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            DateTime from = dtOwnerFrom.DateTimeOffset.DateTime;
+            DateTime to = dtOwnerTo.DateTimeOffset.DateTime;
+            LoadData(1, from, to);
+            dtOwnerFrom.Clear();
+            dtOwnerTo.Clear();
         }
 
         private void btnAddOwner_Click_1(object sender, EventArgs e)
         {
-            var list = new List<TextBox>
+            string msgError = "";
+            var list = new List<TextBox> { tbOwnerFullName, tbOwnerEmail };
+            if(tbOwnerAddress.Text != "")
             {
-                tbOwnerAddress,tbOwnerAddress,tbOwnerFullName,tbOwnerEmail
-
-            };
-            if (!ValidateHelper.Instance.ValidateEmptyTextBox(list))
+                list.Add(tbOwnerAddress);
+            }
+            
+            if (ValidateHelper.Instance.IsEmptyTextBox(list))
             {
                 // Check empty
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!ValidateHelper.Instance.IsValidMaxLengthTextBox(list, 100))
+            {
+                //Check max length
+                MessageBox.Show("Các trường nhập tối đa 100 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (tbOwnerPhoneNumer.Text != "" && !ValidateHelper.Instance.IsValidPhoneNumber(tbOwnerPhoneNumer.Text))
+            {
+                //Check name exist
+                MessageBox.Show("Số điện thoại không đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!ValidateHelper.Instance.IsValidEmail(tbOwnerEmail.Text))
             {
                 //Check name exist
                 MessageBox.Show("Email không đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (OwnerServices.Instance.CheckEmail(tbOwnerEmail.Text))
+            else if (OwnerServices.Instance.IsEmailExisted(out msgError, tbOwnerEmail.Text))
             {
                 //Check name exist
                 MessageBox.Show("Email đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -67,10 +119,10 @@ namespace QuanLiXe
             {
                 //Create
                 
-                if (OwnerServices.Instance.CreateOwner(tbOwnerFullName.Text,tbOwnerEmail.Text,tbOwnerPhoneNumer.Text,tbOwnerAddress.Text))
+                if (OwnerServices.Instance.CreateOwner(out msgError, tbOwnerFullName.Text,tbOwnerEmail.Text,tbOwnerPhoneNumer.Text,tbOwnerAddress.Text, RecentUser.ID))
                 {
                     MessageBox.Show("Thêm người sở hữu xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
+                    LoadData(0, DateTime.Now, DateTime.Now);
                 }
                 else
                 {
@@ -81,13 +133,14 @@ namespace QuanLiXe
 
         private void btnSearchOwner_Click(object sender, EventArgs e)
         {
+            string msgError = "";
             if (tbSearchOwner.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                var data = OwnerServices.Instance.Search(tbSearchOwner.Text);
+                var data = OwnerServices.Instance.Search(out msgError, tbSearchOwner.Text);
                 if (data != null && data.Rows.Count > 0)
                 {
                     dataGridViewOwner.DataSource = data;
@@ -101,12 +154,13 @@ namespace QuanLiXe
 
         private void btnUpdateOwner_Click(object sender, EventArgs e)
         {
+            string msgError = "";
             var list = new List<TextBox>
             {
-                tbOwnerAddress,tbOwnerFullName,tbOwnerEmail,tbOwnerId
+               tbOwnerFullName,tbOwnerEmail,tbOwnerId
 
             };
-            if (!ValidateHelper.Instance.ValidateEmptyTextBox(list))
+            if (ValidateHelper.Instance.IsEmptyTextBox(list))
             {
                 // Check empty
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -116,12 +170,17 @@ namespace QuanLiXe
                 //Check name exist
                 MessageBox.Show("Email không đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (!OwnerServices.Instance.CheckFindById(tbOwnerId.Text))
+            else if (tbOwnerPhoneNumer.Text != "" && !ValidateHelper.Instance.IsValidPhoneNumber(tbOwnerPhoneNumer.Text))
+            {
+                //Check name exist
+                MessageBox.Show("Số điện thoại không đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!OwnerServices.Instance.IsOwnerExistedCheckById(out msgError, tbOwnerId.Text))
             {
                 //Check id exist
                 MessageBox.Show($"Không tồn tại người sở hữu có ID = {tbOwnerId.Text}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (OwnerServices.Instance.CheckEmailOther(tbOwnerEmail.Text, tbOwnerId.Text))
+            else if (OwnerServices.Instance.IsEmailOtherExisted(out msgError, tbOwnerEmail.Text, tbOwnerId.Text))
             {
                 //Check name exist
                 MessageBox.Show("Email đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -129,10 +188,10 @@ namespace QuanLiXe
             else
             {
                 //Update
-                if (OwnerServices.Instance.UpdateOwner(tbOwnerId.Text,tbOwnerFullName.Text,tbOwnerEmail.Text,tbOwnerPhoneNumer.Text,tbOwnerAddress.Text))
+                if (OwnerServices.Instance.UpdateOwner(out msgError, tbOwnerId.Text,tbOwnerFullName.Text,tbOwnerEmail.Text,tbOwnerPhoneNumer.Text,tbOwnerAddress.Text, RecentUser.ID))
                 {
                     MessageBox.Show("Cập nhật người sở hữu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
+                    LoadData(0, DateTime.Now, DateTime.Now);
                 }
                 else
                 {
@@ -143,31 +202,36 @@ namespace QuanLiXe
 
         private void btnDeleteOwner_Click(object sender, EventArgs e)
         {
+            string msgError = "";
             var list = new List<TextBox> { tbOwnerId };
 
-            if (!ValidateHelper.Instance.ValidateEmptyTextBox(list))
+            if (ValidateHelper.Instance.IsEmptyTextBox(list))
             {
                 // Check empty
                 MessageBox.Show("Vui lòng nhập Id người sở hữu cần xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (!OwnerServices.Instance.CheckFindById(tbOwnerId.Text))
+            else if (!OwnerServices.Instance.IsOwnerExistedCheckById(out msgError, tbOwnerId.Text))
             {
                 //Check id exist
                 MessageBox.Show($"Không tồn tại người sở hữu có ID = {tbOwnerId.Text}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                //Delete
+                if(MessageBox.Show("Bạn có chắc chắn muốn xóa người sở hữu này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //Delete
+
+                    if (OwnerServices.Instance.DeleteOwner(out msgError, tbOwnerId.Text, RecentUser.ID))
+                    {
+                        MessageBox.Show("Xóa người sở hữu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData(0, DateTime.Now, DateTime.Now);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa người sở hữu thất bại, vui lòng kiểm tra kết nối hoặc bảo đảm đã xóa hết xe của người sở hữu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
                 
-                if (OwnerServices.Instance.DeleteOwner(tbOwnerId.Text))
-                {
-                    MessageBox.Show("Xóa người sở hữu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa người sở hữu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
         }
 
@@ -176,11 +240,23 @@ namespace QuanLiXe
             if (ExportExcelFile.Instance.ExportExcel("Danh sách chủ xe", gridViewOwner))
             {
                 MessageBox.Show("Xuất file thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Create History
+                ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.Export, "Xuất file danh sách chủ xe");
             }
             else
             {
                 MessageBox.Show("Xuất file thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void gridViewOwner_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            tbOwnerId.Text = gridViewOwner.GetFocusedRowCellValue("OwnerId").ToString();
+            tbOwnerFullName.Text = gridViewOwner.GetFocusedRowCellValue("FullName").ToString();
+            tbOwnerEmail.Text = gridViewOwner.GetFocusedRowCellValue("Email").ToString();
+            tbOwnerPhoneNumer.Text = gridViewOwner.GetFocusedRowCellValue("PhoneNumber").ToString();
+            tbOwnerAddress.Text = gridViewOwner.GetFocusedRowCellValue("Address").ToString();
+
         }
     }
 }

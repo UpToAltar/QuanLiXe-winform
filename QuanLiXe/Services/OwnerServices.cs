@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLiXe.DatabaseHelper;
+using QuanLiXe.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -29,87 +31,118 @@ namespace QuanLiXe.Services
 
         private OwnerServices() { }
 
-        public bool CheckEmail(string email)
+        public bool IsEmailExisted(out string msgError,string email)
         {
-            string query = $"EXEC GetOwnerByEmail @Email = N'{email}'";
-            var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
-            if (data == 0)
-            {
-                return false;
-            }
-            return true;
+            var param = new List<DbParamsSProduce> { new DbParamsSProduce("@Email", email, SqlDbType.NVarChar) };
+            object data = AppDBContext.Context.ExecuteScalarProcedure(out msgError, "", "[dbo].[GetOwnerByEmail]", param);
+            return data == null ? false : (int)data > 0;
         }
 
-        public bool CheckFindById(string idStr)
+        public bool IsOwnerExistedCheckById(out string msgError, string idStr)
         {
             int id = 0;
             if (!int.TryParse(idStr, out id))
             {
+                msgError = "Id không phải là số";
                 return false;
             }
-            string query = $"EXEC GetOwnerById @Id = {id}";
-            var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
-            if (data == 0)
-            {
-                return false;
-            }
-            return true;
+
+            var param = new List<DbParamsSProduce> { new DbParamsSProduce("@Id", id, SqlDbType.Int) };
+            object data = AppDBContext.Context.ExecuteScalarProcedure(out msgError, "", "[dbo].[GetOwnerById]", param);
+            return data == null ? false : (int)data > 0;
         }
 
-        public bool GetSuccessQuery(string query)
+
+        public bool CreateOwner(out string msgError, string name, string email, string phone, string address, string createdBy)
         {
-            var data = AppDBContext.Context.NonQuery(query);
+            var param = new List<DbParamsSProduce>
+            {
+                new DbParamsSProduce("@Email", email, SqlDbType.NVarChar),
+                new DbParamsSProduce("@FullName", name, SqlDbType.NVarChar),
+                new DbParamsSProduce("@Address", address, SqlDbType.NVarChar),
+                new DbParamsSProduce("@PhoneNumber", phone, SqlDbType.NVarChar),
+                new DbParamsSProduce("@CreatedBy", createdBy, SqlDbType.Int)
+            };
+
+            int data = AppDBContext.Context.ExecuteNonQueryProcedure(out msgError, "", "[dbo].[CreateOwner]", param);
+            if(data >0) ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.Add, "Tạo mới chủ xe " + name);
             return data > 0;
         }
 
-        public bool CreateOwner(string name, string email, string phone, string address)
+        public bool UpdateOwner(out string msgError, string id, string name, string email, string phone, string address , string updatedBy)
         {
-            string query = $"EXEC CreateOwner @Email = N'{email}' , @FullName = N'{name}', @Address = N'{address}', @PhoneNumber = N'{phone}'";
-            return GetSuccessQuery(query);
+            var param = new List<DbParamsSProduce>
+            {
+                new DbParamsSProduce("@Id", id, SqlDbType.Int),
+                new DbParamsSProduce("@Email", email, SqlDbType.NVarChar),
+                new DbParamsSProduce("@FullName", name, SqlDbType.NVarChar),
+                new DbParamsSProduce("@Address", address, SqlDbType.NVarChar),
+                new DbParamsSProduce("@PhoneNumber", phone, SqlDbType.NVarChar),
+                new DbParamsSProduce("@UpdatedBy", updatedBy, SqlDbType.Int)
+            };
+            int data = AppDBContext.Context.ExecuteNonQueryProcedure(out msgError, "", "[dbo].[UpdateOwner]", param);
+            if(data > 0) ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.Update, "Cập nhật chủ xe " + name);
+            return data > 0;
         }
 
-        public bool UpdateOwner(string id, string name, string email, string phone, string address)
+        public bool DeleteOwner(out string msgError, string id , string updatedBy)
         {
-            string query = $"EXEC UpdateOwner @Id = {id}, @Email = N'{email}' , @FullName = N'{name}', @Address = N'{address}', @PhoneNumber = N'{phone}'";
-            return GetSuccessQuery(query);
+            var param = new List<DbParamsSProduce>
+            {
+                new DbParamsSProduce("@Id", id, SqlDbType.Int),
+                new DbParamsSProduce("@UpdatedBy", updatedBy, SqlDbType.Int)
+            };
+            object data = AppDBContext.Context.ExecuteScalarProcedure(out msgError, "", "[dbo].[DeleteOwner]", param);
+            if(data != null) ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.Delete, "Xóa chủ xe " + data.ToString());
+            return data != null;
         }
 
-        public bool DeleteOwner(string id)
-        {
-            string query = $"EXEC DeleteOwner @Id ={id}";
-            return GetSuccessQuery(query);
-        }
-
-        public DataTable Search(string name)
+        public DataTable Search(out string msgError, string name)
         {
             int id = 0;
             if (int.TryParse(name, out id))
             {
-                string query1 = $"EXEC GetOwnerById @Id = {id} ";
-                var data1 = AppDBContext.Context.GetDataFromQuery(query1);
-                return data1;
+                var pram = new List<DbParamsSProduce> { new DbParamsSProduce("@Id", id, SqlDbType.Int) };
+                DataTable dt = AppDBContext.Context.ExecuteSProcedureReturnDataTable(out msgError, "", "[dbo].[GetOwnerById]", pram);
+                ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.Search, "Tìm kiếm chủ xe có Id = " + id);
+                return dt;
             }
-            string query = $"EXEC SearchOwnerByFullName @FullName = N'%{name}%'";
-            var data = AppDBContext.Context.GetDataFromQuery(query);
+            var param = new List<DbParamsSProduce> { new DbParamsSProduce("@FullName", $"%{name}%", SqlDbType.NVarChar) };
+            DataTable data = AppDBContext.Context.ExecuteSProcedureReturnDataTable(out msgError, "", "[dbo].[SearchOwnerByFullName]", param);
+            ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.Search, "Tìm kiếm chủ xe có tên chứa : " + name);
             return data;
         }
 
-        public DataTable Load()
+        public DataTable Load(out string msgError)
         {
-            string query = $"EXEC GetAllOwner";
-            var data = AppDBContext.Context.GetDataFromQuery(query);
+            DataTable data = AppDBContext.Context.ExecuteNonQueryProcedureReturnDataTable(out msgError, "", "[dbo].[GetAllOwner]");
+            ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.View, "Xem danh sách chủ xe");
             return data;
         }
 
-        public bool CheckEmailOther(string email, string id)
+        public DataTable LoadByDate(out string msgError, DateTime from, DateTime to)
         {
-            string query = $"EXEC FindOwnerByEmailNotById @Id = {id}, @Email = N'{email}'";
-            var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
-            if (data == 0)
+            var param = new List<DbParamsSProduce>
             {
-                return false;
-            }
-            return true;
+                new DbParamsSProduce("@StartDate", from, SqlDbType.DateTime),
+                new DbParamsSProduce("@EndDate", to, SqlDbType.DateTime)
+            };
+
+            DataTable data = AppDBContext.Context.ExecuteSProcedureReturnDataTable(out msgError, "", "[dbo].[GetOwnersFromDateToDate]", param);
+            ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.View, "Xem danh sách chủ xe từ " + from + " đến " + to);
+            return data;
+        }
+
+        public bool IsEmailOtherExisted(out string msgError, string email, string id)
+        {
+            var param = new List<DbParamsSProduce>
+            {
+                new DbParamsSProduce("@Email", email, SqlDbType.NVarChar),
+                new DbParamsSProduce("@Id", id, SqlDbType.Int)
+            };
+
+            object data = AppDBContext.Context.ExecuteScalarProcedure(out msgError, "", "[dbo].[FindOwnerByEmailNotById]", param);
+            return data == null ? false : (int)data > 0;
         }
     }
 }

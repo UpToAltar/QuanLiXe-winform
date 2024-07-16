@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using QuanLiXe.Helper;
 using QuanLiXe.Services;
 using System;
 using System.Collections.Generic;
@@ -12,16 +13,11 @@ using System.Windows.Forms;
 
 namespace QuanLiXe
 {
-    public partial class RegisterForm : DevExpress.XtraEditors.XtraForm
+    public partial class frmRegister : DevExpress.XtraEditors.XtraForm
     {
-        public RegisterForm()
+        public frmRegister()
         {
             InitializeComponent();
-        }
-
-        private void groupControlLogin_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void hyperlinkLogin_Click(object sender, EventArgs e)
@@ -31,17 +27,28 @@ namespace QuanLiXe
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            string msgError = "";
+            var list = new List<TextEdit>
+            {
+                textEditRegisterDisplayName,textEditRegisterPassword,textEditRegisterUserName,textEditRegisterPasswordConfirm
+
+            };
             //Check if all fields are filled
-            if (textEditRegisterDisplayName.Text == "" || textEditRegisterPassword.Text == "" || textEditRegisterUserName.Text == "" || textEditRegisterPasswordConfirm.Text == "")
+            if (ValidateHelper.Instance.IsEmptyTextEdit(list))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!ValidateHelper.Instance.IsValidMaxLengthTextEdit(list, 100))
+            {
+                //Check max length
+                MessageBox.Show("Các trường nhập tối đa 100 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 
-                if (CheckRegister.Instance.CheckUserExisted(textEditRegisterUserName.Text)) { 
+                if (AccountServices.Instance.IsUserNameExisted(out msgError,textEditRegisterUserName.Text)) { 
                     MessageBox.Show("Tài khoản đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                } else if(!CheckRegister.Instance.CheckPassword(textEditRegisterPassword.Text))
+                } else if(!ValidateHelper.Instance.IsPasswordValid(textEditRegisterPassword.Text))
                 {
                     MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 } 
@@ -51,7 +58,7 @@ namespace QuanLiXe
                 }
                 else
                 {
-                    if (CheckRegister.Instance.CreateUser(textEditRegisterUserName.Text, textEditRegisterPassword.Text, textEditRegisterDisplayName.Text))
+                    if (AccountServices.Instance.CreateUser(out msgError,textEditRegisterUserName.Text, textEditRegisterPassword.Text, textEditRegisterDisplayName.Text,"Nhân viên", "",1,"0",0))
                     {
                         MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
@@ -66,7 +73,7 @@ namespace QuanLiXe
 
         private void btnResetPass_Click(object sender, EventArgs e)
         {
-            var formResetPass = new ResetPassForm();
+            var formResetPass = new frmResetPass();
             this.Hide();
             formResetPass.ShowDialog();
         }
@@ -74,15 +81,6 @@ namespace QuanLiXe
         private void btnCancelLogin_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            var checkOut = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (checkOut != DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
         }
     }
 }

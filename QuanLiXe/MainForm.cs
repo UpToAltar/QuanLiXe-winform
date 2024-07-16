@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace QuanLiXe
 {
-    public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public MainForm()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace QuanLiXe
 
         private void btnAutomaker_ItemClick(object sender, ItemClickEventArgs e)
         {
-            OpenForm(typeof(AutomakerForm));
+            OpenForm(typeof(frmAutomaker));
         }
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
@@ -51,7 +51,7 @@ namespace QuanLiXe
 
         private void btnOwner_ItemClick(object sender, ItemClickEventArgs e)
         {
-            OpenForm(typeof(OwnerForm));
+            OpenForm(typeof(frmOwner));
         }
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
@@ -61,17 +61,27 @@ namespace QuanLiXe
                 MessageBox.Show("Bạn không có quyền truy cập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            OpenForm(typeof(AccountForm));
+            OpenForm(typeof(frmAccount));
         }
 
         private void btnCar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            OpenForm(typeof(VehiclesForm));
+            OpenForm(typeof(frmVehicles));
         }
 
         private void btnMyAccount_ItemClick(object sender, ItemClickEventArgs e)
         {
-            OpenForm(typeof(MyAccountForm));
+            OpenForm(typeof(frmMyAccount));
+        }
+
+        private void btnActivityHistory_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (RecentUser.Role != "Quản trị viên")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            OpenForm(typeof(frmActivityHistory));
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace QuanLiXe
 {
-    partial class AddVehiclesForm
+    partial class frmAddVehicles
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVehiclesForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddVehicles));
             this.tbVehiclesName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,17 +45,28 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.tbVehiclesOwner = new System.Windows.Forms.ComboBox();
-            this.tbVehiclesManufactures = new System.Windows.Forms.ComboBox();
+            this.cboVehiclesOwner = new System.Windows.Forms.ComboBox();
+            this.cboVehiclesManufactures = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.btnAddVehiclesConfirm = new DevExpress.XtraEditors.SimpleButton();
-            this.tbVehiclesWeigth = new System.Windows.Forms.NumericUpDown();
-            this.tbVehicleTopSpeed = new System.Windows.Forms.NumericUpDown();
-            this.tbVehiclesAcceleration = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehiclesWeigth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehicleTopSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehiclesAcceleration)).BeginInit();
+            this.nudVehiclesWeigth = new System.Windows.Forms.NumericUpDown();
+            this.nudVehicleTopSpeed = new System.Windows.Forms.NumericUpDown();
+            this.nudVehiclesAcceleration = new System.Windows.Forms.NumericUpDown();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehiclesWeigth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehicleTopSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehiclesAcceleration)).BeginInit();
             this.SuspendLayout();
             // 
             // tbVehiclesName
@@ -64,7 +75,7 @@
             this.tbVehiclesName.Location = new System.Drawing.Point(34, 143);
             this.tbVehiclesName.Name = "tbVehiclesName";
             this.tbVehiclesName.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesName.TabIndex = 4;
+            this.tbVehiclesName.TabIndex = 1;
             // 
             // label1
             // 
@@ -92,7 +103,7 @@
             this.tbVehiclesLiscensePlate.Location = new System.Drawing.Point(34, 250);
             this.tbVehiclesLiscensePlate.Name = "tbVehiclesLiscensePlate";
             this.tbVehiclesLiscensePlate.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesLiscensePlate.TabIndex = 8;
+            this.tbVehiclesLiscensePlate.TabIndex = 2;
             // 
             // label3
             // 
@@ -110,7 +121,7 @@
             this.tbVehiclesEngineType.Location = new System.Drawing.Point(418, 250);
             this.tbVehiclesEngineType.Name = "tbVehiclesEngineType";
             this.tbVehiclesEngineType.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesEngineType.TabIndex = 10;
+            this.tbVehiclesEngineType.TabIndex = 6;
             // 
             // label4
             // 
@@ -128,7 +139,7 @@
             this.tbVehiclesColor.Location = new System.Drawing.Point(34, 357);
             this.tbVehiclesColor.Name = "tbVehiclesColor";
             this.tbVehiclesColor.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesColor.TabIndex = 12;
+            this.tbVehiclesColor.TabIndex = 3;
             // 
             // label5
             // 
@@ -146,7 +157,7 @@
             this.tbVehiclesFuelType.Location = new System.Drawing.Point(418, 357);
             this.tbVehiclesFuelType.Name = "tbVehiclesFuelType";
             this.tbVehiclesFuelType.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesFuelType.TabIndex = 14;
+            this.tbVehiclesFuelType.TabIndex = 7;
             // 
             // label6
             // 
@@ -164,7 +175,7 @@
             this.tbVehiclesEngineDisplacement.Location = new System.Drawing.Point(808, 357);
             this.tbVehiclesEngineDisplacement.Name = "tbVehiclesEngineDisplacement";
             this.tbVehiclesEngineDisplacement.Size = new System.Drawing.Size(318, 35);
-            this.tbVehiclesEngineDisplacement.TabIndex = 20;
+            this.tbVehiclesEngineDisplacement.TabIndex = 11;
             // 
             // label7
             // 
@@ -200,30 +211,38 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label10.ForeColor = System.Drawing.Color.SeaGreen;
             this.label10.Location = new System.Drawing.Point(410, 19);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(317, 48);
             this.label10.TabIndex = 21;
             this.label10.Text = "Thêm mới 1 xe";
             // 
-            // tbVehiclesOwner
+            // cboVehiclesOwner
             // 
-            this.tbVehiclesOwner.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehiclesOwner.FormattingEnabled = true;
-            this.tbVehiclesOwner.Location = new System.Drawing.Point(418, 143);
-            this.tbVehiclesOwner.Name = "tbVehiclesOwner";
-            this.tbVehiclesOwner.Size = new System.Drawing.Size(317, 36);
-            this.tbVehiclesOwner.TabIndex = 22;
+            this.cboVehiclesOwner.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboVehiclesOwner.DropDownHeight = 200;
+            this.cboVehiclesOwner.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboVehiclesOwner.FormattingEnabled = true;
+            this.cboVehiclesOwner.IntegralHeight = false;
+            this.cboVehiclesOwner.Location = new System.Drawing.Point(418, 143);
+            this.cboVehiclesOwner.MaxDropDownItems = 5;
+            this.cboVehiclesOwner.Name = "cboVehiclesOwner";
+            this.cboVehiclesOwner.Size = new System.Drawing.Size(317, 36);
+            this.cboVehiclesOwner.TabIndex = 5;
             // 
-            // tbVehiclesManufactures
+            // cboVehiclesManufactures
             // 
-            this.tbVehiclesManufactures.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehiclesManufactures.FormattingEnabled = true;
-            this.tbVehiclesManufactures.Location = new System.Drawing.Point(34, 465);
-            this.tbVehiclesManufactures.Name = "tbVehiclesManufactures";
-            this.tbVehiclesManufactures.Size = new System.Drawing.Size(317, 36);
-            this.tbVehiclesManufactures.TabIndex = 24;
+            this.cboVehiclesManufactures.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboVehiclesManufactures.DropDownHeight = 200;
+            this.cboVehiclesManufactures.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboVehiclesManufactures.FormattingEnabled = true;
+            this.cboVehiclesManufactures.IntegralHeight = false;
+            this.cboVehiclesManufactures.Location = new System.Drawing.Point(34, 465);
+            this.cboVehiclesManufactures.MaxDropDownItems = 5;
+            this.cboVehiclesManufactures.Name = "cboVehiclesManufactures";
+            this.cboVehiclesManufactures.Size = new System.Drawing.Size(317, 36);
+            this.cboVehiclesManufactures.TabIndex = 4;
             // 
             // label11
             // 
@@ -248,68 +267,214 @@
             // btnAddVehiclesConfirm
             // 
             this.btnAddVehiclesConfirm.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddVehiclesConfirm.Appearance.ForeColor = System.Drawing.Color.SeaGreen;
             this.btnAddVehiclesConfirm.Appearance.Options.UseFont = true;
+            this.btnAddVehiclesConfirm.Appearance.Options.UseForeColor = true;
             this.btnAddVehiclesConfirm.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAddVehiclesConfirm.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddVehiclesConfirm.ImageOptions.SvgImage")));
             this.btnAddVehiclesConfirm.Location = new System.Drawing.Point(808, 445);
             this.btnAddVehiclesConfirm.Name = "btnAddVehiclesConfirm";
             this.btnAddVehiclesConfirm.Size = new System.Drawing.Size(230, 71);
-            this.btnAddVehiclesConfirm.TabIndex = 27;
+            this.btnAddVehiclesConfirm.TabIndex = 12;
             this.btnAddVehiclesConfirm.Text = "Thêm mới xe";
             this.btnAddVehiclesConfirm.Click += new System.EventHandler(this.btnAddVehiclesConfirm_Click);
             // 
-            // tbVehiclesWeigth
+            // nudVehiclesWeigth
             // 
-            this.tbVehiclesWeigth.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehiclesWeigth.Location = new System.Drawing.Point(418, 466);
-            this.tbVehiclesWeigth.Maximum = new decimal(new int[] {
+            this.nudVehiclesWeigth.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudVehiclesWeigth.Location = new System.Drawing.Point(418, 466);
+            this.nudVehiclesWeigth.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.tbVehiclesWeigth.Name = "tbVehiclesWeigth";
-            this.tbVehiclesWeigth.Size = new System.Drawing.Size(319, 35);
-            this.tbVehiclesWeigth.TabIndex = 28;
+            this.nudVehiclesWeigth.Name = "nudVehiclesWeigth";
+            this.nudVehiclesWeigth.Size = new System.Drawing.Size(319, 35);
+            this.nudVehiclesWeigth.TabIndex = 8;
             // 
-            // tbVehicleTopSpeed
+            // nudVehicleTopSpeed
             // 
-            this.tbVehicleTopSpeed.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehicleTopSpeed.Location = new System.Drawing.Point(807, 143);
-            this.tbVehicleTopSpeed.Maximum = new decimal(new int[] {
+            this.nudVehicleTopSpeed.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudVehicleTopSpeed.Location = new System.Drawing.Point(807, 143);
+            this.nudVehicleTopSpeed.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.tbVehicleTopSpeed.Name = "tbVehicleTopSpeed";
-            this.tbVehicleTopSpeed.Size = new System.Drawing.Size(319, 35);
-            this.tbVehicleTopSpeed.TabIndex = 29;
+            this.nudVehicleTopSpeed.Name = "nudVehicleTopSpeed";
+            this.nudVehicleTopSpeed.Size = new System.Drawing.Size(319, 35);
+            this.nudVehicleTopSpeed.TabIndex = 9;
             // 
-            // tbVehiclesAcceleration
+            // nudVehiclesAcceleration
             // 
-            this.tbVehiclesAcceleration.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVehiclesAcceleration.Location = new System.Drawing.Point(807, 251);
-            this.tbVehiclesAcceleration.Maximum = new decimal(new int[] {
+            this.nudVehiclesAcceleration.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudVehiclesAcceleration.Location = new System.Drawing.Point(807, 251);
+            this.nudVehiclesAcceleration.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.tbVehiclesAcceleration.Name = "tbVehiclesAcceleration";
-            this.tbVehiclesAcceleration.Size = new System.Drawing.Size(319, 35);
-            this.tbVehiclesAcceleration.TabIndex = 30;
+            this.nudVehiclesAcceleration.Name = "nudVehiclesAcceleration";
+            this.nudVehiclesAcceleration.Size = new System.Drawing.Size(319, 35);
+            this.nudVehiclesAcceleration.TabIndex = 10;
             // 
-            // AddVehiclesForm
+            // labelControl5
             // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Location = new System.Drawing.Point(11, 146);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(17, 33);
+            this.labelControl5.TabIndex = 26;
+            this.labelControl5.Text = "*";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(11, 253);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(17, 33);
+            this.labelControl1.TabIndex = 27;
+            this.labelControl1.Text = "*";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(11, 359);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(17, 33);
+            this.labelControl2.TabIndex = 28;
+            this.labelControl2.Text = "*";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
+            this.labelControl3.Location = new System.Drawing.Point(11, 468);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(17, 33);
+            this.labelControl3.TabIndex = 29;
+            this.labelControl3.Text = "*";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseForeColor = true;
+            this.labelControl4.Location = new System.Drawing.Point(395, 146);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(17, 33);
+            this.labelControl4.TabIndex = 30;
+            this.labelControl4.Text = "*";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Location = new System.Drawing.Point(395, 253);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(17, 33);
+            this.labelControl6.TabIndex = 31;
+            this.labelControl6.Text = "*";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Location = new System.Drawing.Point(395, 359);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(17, 33);
+            this.labelControl8.TabIndex = 32;
+            this.labelControl8.Text = "*";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseForeColor = true;
+            this.labelControl9.Location = new System.Drawing.Point(395, 468);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(17, 33);
+            this.labelControl9.TabIndex = 33;
+            this.labelControl9.Text = "*";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseForeColor = true;
+            this.labelControl10.Location = new System.Drawing.Point(784, 146);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(17, 33);
+            this.labelControl10.TabIndex = 34;
+            this.labelControl10.Text = "*";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Appearance.Options.UseForeColor = true;
+            this.labelControl11.Location = new System.Drawing.Point(784, 253);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(17, 33);
+            this.labelControl11.TabIndex = 35;
+            this.labelControl11.Text = "*";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Appearance.Options.UseForeColor = true;
+            this.labelControl12.Location = new System.Drawing.Point(784, 359);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(17, 33);
+            this.labelControl12.TabIndex = 36;
+            this.labelControl12.Text = "*";
+            // 
+            // frmAddVehicles
+            // 
+            this.AcceptButton = this.btnAddVehiclesConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 556);
-            this.Controls.Add(this.tbVehiclesAcceleration);
-            this.Controls.Add(this.tbVehicleTopSpeed);
-            this.Controls.Add(this.tbVehiclesWeigth);
+            this.Controls.Add(this.labelControl12);
+            this.Controls.Add(this.labelControl11);
+            this.Controls.Add(this.labelControl10);
+            this.Controls.Add(this.labelControl9);
+            this.Controls.Add(this.labelControl8);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.nudVehiclesAcceleration);
+            this.Controls.Add(this.nudVehicleTopSpeed);
+            this.Controls.Add(this.nudVehiclesWeigth);
             this.Controls.Add(this.btnAddVehiclesConfirm);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.tbVehiclesManufactures);
+            this.Controls.Add(this.cboVehiclesManufactures);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.tbVehiclesOwner);
+            this.Controls.Add(this.cboVehiclesOwner);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tbVehiclesEngineDisplacement);
             this.Controls.Add(this.label7);
@@ -326,12 +491,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbVehiclesName);
             this.Controls.Add(this.label1);
-            this.Name = "AddVehiclesForm";
+            this.Name = "frmAddVehicles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm mới xe";
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehiclesWeigth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehicleTopSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVehiclesAcceleration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehiclesWeigth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehicleTopSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVehiclesAcceleration)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,13 +520,24 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox tbVehiclesOwner;
-        private System.Windows.Forms.ComboBox tbVehiclesManufactures;
+        private System.Windows.Forms.ComboBox cboVehiclesOwner;
+        private System.Windows.Forms.ComboBox cboVehiclesManufactures;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private DevExpress.XtraEditors.SimpleButton btnAddVehiclesConfirm;
-        private System.Windows.Forms.NumericUpDown tbVehiclesWeigth;
-        private System.Windows.Forms.NumericUpDown tbVehicleTopSpeed;
-        private System.Windows.Forms.NumericUpDown tbVehiclesAcceleration;
+        private System.Windows.Forms.NumericUpDown nudVehiclesWeigth;
+        private System.Windows.Forms.NumericUpDown nudVehicleTopSpeed;
+        private System.Windows.Forms.NumericUpDown nudVehiclesAcceleration;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
     }
 }

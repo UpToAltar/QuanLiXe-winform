@@ -15,6 +15,10 @@ namespace QuanLiXe.DTO
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
 
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        
+
         public OwnerDTO(DataRow data)
         {
             this.PhoneNumber = data["PhoneNumber"].ToString();
@@ -22,6 +26,8 @@ namespace QuanLiXe.DTO
             this.FullName = data["FullName"].ToString();
             this.Email = data["Email"].ToString();
             this.Address = data["Address"].ToString();
+            this.CreatedAt = DateTime.Parse(data["CreatedAt"].ToString());
+            this.UpdatedAt = DateTime.Parse(data["UpdatedAt"].ToString());
 
         }
         public OwnerDTO()

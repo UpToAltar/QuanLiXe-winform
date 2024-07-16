@@ -31,6 +31,8 @@ namespace QuanLiXe.DTO
         public float Acceleration { get; set; }
 
         public string EngineDisplacement { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
         public VehiclesDTO(DataRow data)
         {
             this.ID = Int32.Parse(data["VehiclesId"].ToString());
@@ -46,7 +48,8 @@ namespace QuanLiXe.DTO
             this.TopSpeed = float.Parse(data["TopSpeed"].ToString());
             this.Acceleration = float.Parse(data["Acceleration"].ToString());
             this.EngineDisplacement = data["EngineDisplacement"].ToString();
-
+            this.CreatedAt = DateTime.Parse(data["CreatedAt"].ToString());
+            this.UpdatedAt = DateTime.Parse(data["UpdatedAt"].ToString());
         }
     }
 
@@ -72,6 +75,8 @@ namespace QuanLiXe.DTO
         public float Acceleration { get; set; }
 
         public string EngineDisplacement { get; set; }
+
+        
         public VehiclesUpdateDTO(DataRow data)
         {
             this.ID = Int32.Parse(data["VehiclesId"].ToString());

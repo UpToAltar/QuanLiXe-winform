@@ -15,10 +15,10 @@ using System.Windows.Forms;
 
 namespace QuanLiXe
 {
-    public partial class MyAccountForm : DevExpress.XtraEditors.XtraForm
+    public partial class frmMyAccount : DevExpress.XtraEditors.XtraForm
     {
-        public const string DefaultImage = "https://png.pngtree.com/png-vector/20190803/ourlarge/pngtree-avatar-user-basic-abstract-circle-background-flat-color-icon-png-image_1647265.jpg";
-        public MyAccountForm()
+        public const string DEFAULT_IMAGE = "https://png.pngtree.com/png-vector/20190803/ourlarge/pngtree-avatar-user-basic-abstract-circle-background-flat-color-icon-png-image_1647265.jpg";
+        public frmMyAccount()
         {
             InitializeComponent();
             Load();
@@ -31,63 +31,73 @@ namespace QuanLiXe
             tbMyAccountRole.Text = RecentUser.Role;
             tbMyAccountPassword.Text = RecentUser.Password;
             tbMyAccountImage.Text = RecentUser.Image;
-            pictureBoxMyAccount.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbMyAccount.SizeMode = PictureBoxSizeMode.StretchImage;
+            tbMyAccountCreatedAt.Text = RecentUser.CreatedAt.ToString();
+            tbMyAccountUpdatedAt.Text = RecentUser.UpdatedAt.ToString();
             if (RecentUser.Image != "")
             {
-                pictureBoxMyAccount.ImageLocation = RecentUser.Image;
+                pbMyAccount.ImageLocation = RecentUser.Image;
 
             }
             else
             {
-                pictureBoxMyAccount.ImageLocation = DefaultImage;
+                pbMyAccount.ImageLocation = DEFAULT_IMAGE;
             }
         }
 
         private void btnResetPasswordMyAccount_Click(object sender, EventArgs e)
         {
-            var formResetPass = new ResetPassForm(this);
+            var formResetPass = new frmResetPass(this);
             
             formResetPass.ShowDialog();
         }
 
         private void btnUpdateMyAccount_Click(object sender, EventArgs e)
         {
+            string msgError = "";
             var list = new List<TextEdit>
             {
                 tbMyAccountUserName,tbMyAccountDisplayName
 
             };
-            if (!ValidateHelper.Instance.ValidateEmptyTextEdit(list))
+            if (ValidateHelper.Instance.IsEmptyTextEdit(list))
             {
                 // Check empty
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (!AccountServices.Instance.CheckFindById(RecentUser.ID))
+            else if (!ValidateHelper.Instance.IsValidMaxLengthTextEdit(list, 100))
             {
-                //Check id exist
-                MessageBox.Show($"Không tồn tại người dùng, có lỗi xảy ra", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //Check max length
+                MessageBox.Show("Các trường nhập tối đa 100 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (AccountServices.Instance.CheckUserNameOther(tbMyAccountUserName.Text, RecentUser.ID))
-            {
-                //Check name exist
-                MessageBox.Show("Tên đăng nhập đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (tbMyAccountImage.Text != "" &&  !ChechImageUrl.Instance.IsImageUrlValid(tbMyAccountImage.Text))
+            else if (tbMyAccountImage.Text != "" && !ChechImageUrl.Instance.IsImageUrlValid(tbMyAccountImage.Text))
             {
                 //Check name exist
                 MessageBox.Show("Đường dẫn ảnh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (!AccountServices.Instance.IsUserExistedCheckById(out msgError, RecentUser.ID))
+            {
+                //Check id exist
+                MessageBox.Show($"Không tồn tại người dùng, có lỗi xảy ra", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (AccountServices.Instance.IsUserExisted(out msgError, tbMyAccountUserName.Text, RecentUser.ID))
+            {
+                //Check name exist
+                MessageBox.Show("Tên đăng nhập đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
             else
             {
                 //Update
 
-                if (AccountServices.Instance.UpdateUser(RecentUser.ID, tbMyAccountUserName.Text, RecentUser.Password, tbMyAccountDisplayName.Text, RecentUser.Role, tbMyAccountImage.Text))
+                if (AccountServices.Instance.UpdateUser(out msgError, RecentUser.ID, tbMyAccountUserName.Text,"", tbMyAccountDisplayName.Text, RecentUser.Role, tbMyAccountImage.Text,1, RecentUser.ID))
                 {
                     MessageBox.Show("Cập nhật người dùng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     RecentUser.UserName = tbMyAccountUserName.Text;
                     RecentUser.DisplayName = tbMyAccountDisplayName.Text;
                     RecentUser.Image = tbMyAccountImage.Text;
+                    RecentUser.UpdatedAt = DateTime.Now;
                     Load();
                 }
                 else

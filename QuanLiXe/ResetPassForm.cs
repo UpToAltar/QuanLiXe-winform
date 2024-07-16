@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using QuanLiXe.DTO;
+using QuanLiXe.Helper;
 using QuanLiXe.Services;
 using System;
 using System.Collections.Generic;
@@ -13,16 +14,16 @@ using System.Windows.Forms;
 
 namespace QuanLiXe
 {
-    public partial class ResetPassForm : DevExpress.XtraEditors.XtraForm
+    public partial class frmResetPass : DevExpress.XtraEditors.XtraForm
     {
-        public ResetPassForm()
+        public frmResetPass()
         {
             InitializeComponent();
         }
 
-        private MyAccountForm _myAccountForm;
+        private frmMyAccount _myAccountForm;
 
-        public ResetPassForm(MyAccountForm myAccountForm)
+        public frmResetPass(frmMyAccount myAccountForm)
         {
             InitializeComponent();
             _myAccountForm = myAccountForm;
@@ -34,11 +35,23 @@ namespace QuanLiXe
             string oldPass = textEditResetOldPass.Text;
             string newPass = textEditResetNewPass.Text;
             string newPassConfirm = textEditResetNewPassConfirm.Text;
+            string msgError = "";
 
-            if (username == "" || oldPass == "" || newPass == "" || newPassConfirm == "")
+            var list = new List<TextEdit>
+            {
+                textEditResetUserName,textEditResetOldPass,textEditResetNewPass,textEditResetNewPassConfirm
+
+            };
+
+            if (ValidateHelper.Instance.IsEmptyTextEdit(list))
             {
                 //Check if all fields are filled
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!ValidateHelper.Instance.IsValidMaxLengthTextEdit(list, 100))
+            {
+                //Check max length
+                MessageBox.Show("Các trường nhập tối đa 100 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (newPass != newPassConfirm)
             {
@@ -50,38 +63,43 @@ namespace QuanLiXe
                 // Check equal pass
                 MessageBox.Show("Mật khẩu mới không được trùng mật khẩu cũ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (!CheckResetPass.Instance.CheckUserExistedAndPassword(username, oldPass))
+            else if (!ValidateHelper.Instance.IsPasswordValid(newPass))
+            {
+                MessageBox.Show("Mật khẩu mới ít nhất có 6 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!CheckResetPass.Instance.IsUserExistedCheckByUserNameAndPassword(out msgError, username, oldPass))
             {
                 // Check Exist User and Correct Password
                 MessageBox.Show("Tài khoản không tồn tại hoặc mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (!CheckResetPass.Instance.CheckPassword(newPass))
-            {
-                MessageBox.Show("Mật khẩu mới phải nhiều hơn 6 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             else
             {
-                if (CheckResetPass.Instance.ResetPassword(username, newPass))
+                if(MessageBox.Show("Bạn có chắc chắn muốn đổi mật khẩu không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RecentUser.Password = newPass;
-                    _myAccountForm.Load();
-                    this.Hide();
+                    //Reset password
+                    if (CheckResetPass.Instance.ResetPassword(out msgError, username, newPass))
+                    {
+                        MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RecentUser.Password = newPass;
+                        if(_myAccountForm != null)
+                        {
+                            _myAccountForm.Load();
+                        }
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đổi mật khẩu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Đổi mật khẩu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-
-
+               
             }
 
         }
 
         private void hyperlinkLogin_Click(object sender, EventArgs e)
         {
-            var formLogin = new LoginForm();
+            var formLogin = new frmLogin();
             this.Hide();
             formLogin.ShowDialog();
         }
@@ -90,11 +108,6 @@ namespace QuanLiXe
         {
             Application.Exit();
 
-        }
-
-        private void ResetPassForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
         }
     }
 }

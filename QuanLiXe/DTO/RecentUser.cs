@@ -17,5 +17,8 @@ namespace QuanLiXe.DTO
         public static string Password { get; set; }
 
         public static string Image { get; set; }
+
+        public static DateTime CreatedAt { get; set; }
+        public static DateTime UpdatedAt { get; set; }
     }
 }

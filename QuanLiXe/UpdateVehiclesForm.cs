@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using QuanLiXe.DTO;
 using QuanLiXe.Helper;
 using QuanLiXe.Services;
@@ -14,54 +15,78 @@ using System.Windows.Forms;
 
 namespace QuanLiXe
 {
-    public partial class UpdateVehiclesForm : DevExpress.XtraEditors.XtraForm
+    public partial class frmUpdateVehicles : DevExpress.XtraEditors.XtraForm
     {
-        private VehiclesForm _vehiclesForm;
-        public UpdateVehiclesForm(VehiclesForm vehiclesForm)
+        private frmVehicles _vehiclesForm;
+        private GridView _dataGridView;
+        public frmUpdateVehicles(frmVehicles vehiclesForm, GridView dataGridView)
         {
             InitializeComponent();
-            LoadData();
+            
             _vehiclesForm = vehiclesForm;
+            _dataGridView = dataGridView;
+            LoadData();
         }
 
         void LoadData()
         {
+            string msgError = "";
             //Load manufactures
-            var dataManufactures = VehiclesServices.Instance.LoadManufactures();
+            var dataManufactures = VehiclesServices.Instance.LoadManufactures(out msgError);
 
-            if (tbVehiclesManufactures.Items.Count == 0)
+            if (cboVehiclesManufactures.Items.Count == 0)
             {
                 foreach (var item in dataManufactures)
                 {
-                    tbVehiclesManufactures.Items.Add(item);
+                    cboVehiclesManufactures.Items.Add(item);
 
                 }
-                tbVehiclesManufactures.SelectedIndex = 0;
-                tbVehiclesManufactures.DisplayMember = "Name";
+                cboVehiclesManufactures.SelectedIndex = 0;
+                cboVehiclesManufactures.DisplayMember = "Name";
             }
 
             //Load Owner
-            var dataOwner = VehiclesServices.Instance.LoadOwners();
-            if (tbVehiclesOwner.Items.Count == 0)
+            var dataOwner = VehiclesServices.Instance.LoadOwners(out msgError);
+            if (cboVehiclesOwner.Items.Count == 0)
             {
                 foreach (var item in dataOwner)
                 {
-                    tbVehiclesOwner.Items.Add(item);
+                    cboVehiclesOwner.Items.Add(item);
                 }
-                tbVehiclesOwner.SelectedIndex = 0;
-                tbVehiclesOwner.DisplayMember = "FullName";
+                cboVehiclesOwner.SelectedIndex = 0;
+                cboVehiclesOwner.DisplayMember = "FullName";
             }
+
+            //Load data
+            tbVehiclesId.Text = _dataGridView.GetFocusedRowCellValue("ID").ToString();
+            tbVehiclesName.Text = _dataGridView.GetFocusedRowCellValue("Name").ToString();
+            tbVehiclesColor.Text = _dataGridView.GetFocusedRowCellValue("Color").ToString();
+            tbVehiclesLiscensePlate.Text = _dataGridView.GetFocusedRowCellValue("LiscensePlate").ToString();
+            tbVehiclesEngineDisplacement.Text = _dataGridView.GetFocusedRowCellValue("EngineDisplacement").ToString();
+            tbVehiclesEngineType.Text = _dataGridView.GetFocusedRowCellValue("EngineType").ToString();
+            tbVehiclesFuelType.Text = _dataGridView.GetFocusedRowCellValue("FuelType").ToString();
+            cboVehiclesManufactures.SelectedItem = cboVehiclesManufactures.Items
+                                                    .Cast<ManufacturesDTO>()
+                                                    .FirstOrDefault(item => item.Name == _dataGridView.GetFocusedRowCellValue("Manufacture").ToString());
+            cboVehiclesOwner.SelectedItem = cboVehiclesOwner.Items
+                .Cast<OwnerDTO>()
+                .FirstOrDefault(item => item.FullName == _dataGridView.GetFocusedRowCellValue("OwnerName").ToString());
+            nudVehicleTopSpeed.Value = (decimal)float.Parse(_dataGridView.GetFocusedRowCellValue("TopSpeed").ToString());
+            nudVehiclesWeigth.Value = (decimal)float.Parse(_dataGridView.GetFocusedRowCellValue("Weigth").ToString());
+            nudVehiclesAcceleration.Value = (decimal)float.Parse(_dataGridView.GetFocusedRowCellValue("Acceleration").ToString());
+
         }
 
         private void btnSearchVehiclesToUpdate_Click(object sender, EventArgs e)
         {
+            string msgError = "";
             if(tbVehiclesId.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                var data = VehiclesServices.Instance.SearchById(tbVehiclesId.Text);
+                var data = VehiclesServices.Instance.SearchById(out msgError, tbVehiclesId.Text);
                 if (data != null)
                 {
                     tbVehiclesName.Text = data.Name;
@@ -71,17 +96,17 @@ namespace QuanLiXe
                     tbVehiclesEngineType.Text = data.EngineType;
                     tbVehiclesFuelType.Text = data.FuelType;
                     tbVehiclesLiscensePlate.Text = data.LiscensePlate;
-                    tbVehiclesManufactures.SelectedItem = tbVehiclesManufactures.Items
+                    cboVehiclesManufactures.SelectedItem = cboVehiclesManufactures.Items
                                                             .Cast<ManufacturesDTO>()
                                                             .FirstOrDefault(item => item.ID == data.Manufacture.ID); ;
                    
-                    tbVehiclesOwner.SelectedItem = tbVehiclesOwner.Items
+                    cboVehiclesOwner.SelectedItem = cboVehiclesOwner.Items
                                                             .Cast<OwnerDTO>()
                                                             .FirstOrDefault(item => item.ID == data.Owner.ID);
                     
-                    tbVehicleTopSpeed.Value = (decimal)data.TopSpeed;
-                    tbVehiclesWeigth.Value = (decimal)data.Weigth;
-                    tbVehiclesAcceleration.Value = (decimal)data.Acceleration;
+                    nudVehicleTopSpeed.Value = (decimal)data.TopSpeed;
+                    nudVehiclesWeigth.Value = (decimal)data.Weigth;
+                    nudVehiclesAcceleration.Value = (decimal)data.Acceleration;
                 }
                 else
                 {
@@ -95,22 +120,43 @@ namespace QuanLiXe
 
         private void btnUpdateVehiclesConfirm_Click(object sender, EventArgs e)
         {
+            string msgError = "";
             var list = new List<TextBox>
             {
                 tbVehiclesColor,tbVehiclesEngineDisplacement,tbVehiclesEngineType,tbVehiclesFuelType,tbVehiclesLiscensePlate,tbVehiclesName,
                 tbVehiclesId
             };
-            if (!ValidateHelper.Instance.ValidateEmptyTextBox(list))
+            if (ValidateHelper.Instance.IsEmptyTextBox(list))
             {
                 // Check empty
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (!VehiclesServices.Instance.CheckFindById(tbVehiclesId.Text))
+            else if (!ValidateHelper.Instance.IsValidMaxLengthTextBox(list, 100))
+            {
+                //Check max length
+                MessageBox.Show("Các trường nhập tối đa 100 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!ValidateHelper.Instance.IsValidMinMax(nudVehiclesWeigth.Value, 0, 1000000))
+            {
+                //Check max length
+                MessageBox.Show("Cân nặng cần lớn hơn 0 và bé hơn 1000000 kg", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!ValidateHelper.Instance.IsValidMinMax(nudVehicleTopSpeed.Value, 0, 1000))
+            {
+                //Check max length
+                MessageBox.Show("Tốc độ tối đa cần lớn hơn 0 và bé hơn 1000 km/h", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!ValidateHelper.Instance.IsValidMinMax(nudVehiclesAcceleration.Value, 0, 1000))
+            {
+                //Check max length
+                MessageBox.Show("Tăng tốc cần lớn hơn 0 và bé hơn 1000 km/h", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!VehiclesServices.Instance.IsVehiclesExistedCheckById(out msgError, tbVehiclesId.Text))
             {
                 //Check plate exist
                 MessageBox.Show($"Không tìm thấy xe có ID = {tbVehiclesId.Text}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (VehiclesServices.Instance.CheckPlateOther(tbVehiclesLiscensePlate.Text, tbVehiclesId.Text))
+            else if (VehiclesServices.Instance.IsOtherPlateExisted(out msgError, tbVehiclesLiscensePlate.Text, tbVehiclesId.Text))
             {
                 //Check plate exist
                 MessageBox.Show("Biển số xe đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -119,11 +165,11 @@ namespace QuanLiXe
             {
                 //Create
 
-                if (VehiclesServices.Instance.UpdateVehicles(tbVehiclesColor, tbVehiclesEngineDisplacement, tbVehiclesEngineType, tbVehiclesFuelType, tbVehiclesLiscensePlate, tbVehiclesName, tbVehiclesAcceleration, tbVehiclesWeigth, tbVehicleTopSpeed, tbVehiclesManufactures, tbVehiclesOwner, tbVehiclesId))
+                if (VehiclesServices.Instance.UpdateVehicles(out msgError, tbVehiclesColor, tbVehiclesEngineDisplacement, tbVehiclesEngineType, tbVehiclesFuelType, tbVehiclesLiscensePlate, tbVehiclesName, nudVehiclesAcceleration, nudVehiclesWeigth, nudVehicleTopSpeed, cboVehiclesManufactures, cboVehiclesOwner, tbVehiclesId, RecentUser.ID))
                 {
                     MessageBox.Show("Cập nhật xe thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
-                    _vehiclesForm.LoadData();
+                    _vehiclesForm.LoadData(0, DateTime.Now, DateTime.Now);
                     this.Close();
                     
                 }
@@ -134,9 +180,5 @@ namespace QuanLiXe
             }
         }
 
-        private void UpdateVehiclesForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
     }
 }

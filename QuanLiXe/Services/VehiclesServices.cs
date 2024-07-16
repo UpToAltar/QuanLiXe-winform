@@ -1,4 +1,6 @@
-﻿using QuanLiXe.DTO;
+﻿using GLib;
+using QuanLiXe.DatabaseHelper;
+using QuanLiXe.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -29,83 +31,38 @@ namespace QuanLiXe.Services
             }
         }
 
-        private static string QueryGetBase = $"SELECT" +
-                $" TOP 100 v.VehiclesId, v.VehicleName, v.LiscensePlate, v.Color, " +
-                $"m.Name as ManufactureName,m.ManufacturesId as ManufacturesId , o.FullName as OwnerName,o.OwnerId as OwnerId , o.Email as OwnerEmail," +
-                $"s.EngineType, s.FuelType , s.Weigth, s.TopSpeed, s.Acceleration, s.EngineDisplacement" +
-                $" FROM Vehicles AS v " +
-                $"JOIN Specifications AS s" +
-                $" ON s.SpecificationsId = v.SpecificationsId " +
-                $"JOIN Manufactures AS m" +
-                $" ON m.ManufacturesId = v.ManufacturesId " +
-                $"JOIN Owners AS o" +
-                $" ON o.OwnerId = v.OwnerId ";
-
         private VehiclesServices() { }
 
-        public bool CheckPlate(string plate)
+        public bool IsPlateExisted(out string msgError,string plate)
         {
-            string query = $"EXEC FindVehiclesByPlate @LiscensePlate = '{plate}'";
-            var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
-            if (data == 0)
-            {
-                return false;
-            }
-            return true;
+            var param = new List<DbParamsSProduce> { new DbParamsSProduce("@LiscensePlate", plate, SqlDbType.NVarChar) };
+            object data = AppDBContext.Context.ExecuteScalarProcedure(out msgError,"", "[dbo].[FindVehiclesByPlate]", param);
+            return data == null ? false : (int)data > 0;
         }
 
-        public bool CheckFindById(string idStr)
+
+
+        public bool IsVehiclesExistedCheckById(out string msgError, string idStr)
         {
             int id = 0;
             if (!int.TryParse(idStr, out id))
             {
+                msgError = "Id không phải là số";
                 return false;
             }
-            string query = $"EXEC FindVehiclesById @Id = {id}";
-            var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
-            if (data == 0)
-            {
-                return false;
-            }
-            return true;
+            var param = new List<DbParamsSProduce> { new DbParamsSProduce("@Id", id, SqlDbType.Int) };
+            object data = AppDBContext.Context.ExecuteScalarProcedure(out msgError, "", "[dbo].[FindVehiclesById]", param);
+            return data == null ? false : (int)data > 0;
         }
 
-        public bool GetSuccessQuery(string query)
+        public VehiclesUpdateDTO SearchById(out string msgError, string id)
         {
-            var data = AppDBContext.Context.NonQuery(query);
-            return data > 0;
-        }
-
-        public List<VehiclesDTO> Search(string name)
-        {
-            int id = 0;
-            var list = new List<VehiclesDTO>();
-            if (int.TryParse(name, out id))
-            {
-                string query1 = $"EXEC GetVehiclesByIdOrSearchByName @Id = {id},@Name = N'', @Type = 1";
-                var data1 = AppDBContext.Context.GetDataFromQuery(query1);
-                foreach (DataRow item in data1.Rows)
-                {
-                    list.Add(new VehiclesDTO(item));
-                }
-                return list;
-                
-            }
-            string query = $"EXEC GetVehiclesByIdOrSearchByName @Id = 0,@Name = N'%{name}%', @Type = 2"; ;
-
-            
-            var data = AppDBContext.Context.GetDataFromQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add(new VehiclesDTO(item));
-            }
-            return list;
-        }
-
-        public VehiclesUpdateDTO SearchById(string id)
-        {
-            string query = $"EXEC GetVehiclesByIdOrSearchByName @Id = {id},@Name = N'', @Type = 1";
-            var data = AppDBContext.Context.GetDataFromQuery(query);
+            var param = new List<DbParamsSProduce> { 
+                new DbParamsSProduce("@Id", id, SqlDbType.Int),
+                new DbParamsSProduce("@Name", "", SqlDbType.NVarChar),
+                new DbParamsSProduce("@Type", 1, SqlDbType.Int)
+            };
+            DataTable data = AppDBContext.Context.ExecuteSProcedureReturnDataTable(out msgError, "", "[dbo].[GetVehiclesByIdOrSearchByName]", param);
             foreach (DataRow item in data.Rows)
             {
                 var dto = new VehiclesUpdateDTO(item);
@@ -114,130 +71,132 @@ namespace QuanLiXe.Services
             return null;
         }
 
-        public List<VehiclesDTO> Load()
+        public List<VehiclesDTO> Load(out string msgError)
         {
             var list = new List<VehiclesDTO>();
-            string query = "EXEC GetAllVehicles";
-            var data = AppDBContext.Context.GetDataFromQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add(new VehiclesDTO(item));
-            }
+            DataTable data = AppDBContext.Context.ExecuteNonQueryProcedureReturnDataTable(out msgError, "", "[dbo].[GetAllVehicles]");
+            foreach (DataRow item in data.Rows) list.Add(new VehiclesDTO(item));
+            ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.View, "Xem danh sách xe");
             return list ;
         }
 
-        public List<ManufacturesDTO> LoadManufactures()
+        public List<VehiclesDTO> LoadByDate(out string msgError, System.DateTime from, System.DateTime to)
+        {
+            var list = new List<VehiclesDTO>();
+            var param = new List<DbParamsSProduce> {
+                new DbParamsSProduce("@StartDate", from, SqlDbType.DateTime),
+                new DbParamsSProduce("@EndDate", to, SqlDbType.DateTime)
+            };
+            DataTable data = AppDBContext.Context.ExecuteSProcedureReturnDataTable(out msgError, "", "[dbo].[GetVehicleFromDateToDate]", param);
+            foreach (DataRow item in data.Rows) list.Add(new VehiclesDTO(item));
+            ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.View, "Xem danh sách xe từ " + from + " đến " + to);
+            return list;
+        }
+
+        public List<ManufacturesDTO> LoadManufactures(out string msgError)
         {
             var list = new List<ManufacturesDTO>();
-            string query = $"EXEC GetAllManufactures";
-            var data = AppDBContext.Context.GetDataFromQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add(new ManufacturesDTO(item));
-            }
+            DataTable data = AppDBContext.Context.ExecuteNonQueryProcedureReturnDataTable(out msgError, "", "[dbo].[GetAllManufactures]");
+            foreach (DataRow item in data.Rows) list.Add(new ManufacturesDTO(item));
             return list;
         }
 
-        public List<OwnerDTO> LoadOwners()
+        public List<OwnerDTO> LoadOwners(out string msgError)
         {
             var list = new List<OwnerDTO>();
-            string query = $"EXEC GetAllOwner";
-            var data = AppDBContext.Context.GetDataFromQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add(new OwnerDTO(item));
-            }
+            DataTable data = AppDBContext.Context.ExecuteNonQueryProcedureReturnDataTable(out msgError, "", "[dbo].[GetAllOwner]");
+            foreach (DataRow item in data.Rows) list.Add(new OwnerDTO(item));
             return list;
         }
 
-        public bool CheckPlateOther(string plate, string id)
+        public bool IsOtherPlateExisted(out string msgError, string plate, string id)
         {
-            string query = $"EXEC FindVehiclesByPlateNotById @LiscensePlate = '{plate}', @Id = {id}";
-            var data = AppDBContext.Context.GetDataTypeIntFromQuery(query);
-            if (data == 0)
-            {
-                return false;
-            }
-            return true;
+            var param = new List<DbParamsSProduce> { new DbParamsSProduce("@LiscensePlate", plate, SqlDbType.NVarChar), new DbParamsSProduce("@Id", id, SqlDbType.Int) };
+            object data = AppDBContext.Context.ExecuteScalarProcedure(out msgError, "", "[dbo].[FindVehiclesByPlateNotById]", param);
+            return data == null ? false : (int)data > 0;
         }
 
 
-        public bool CreateVehicles(TextBox color, TextBox engineDisplacement, TextBox engineType, TextBox fuelType, TextBox liscensePlate, TextBox name, NumericUpDown acceleration, NumericUpDown weigth, NumericUpDown topSpeed,ComboBox manufactures, ComboBox owner)
+        public bool CreateVehicles(out string msgError, TextBox color, TextBox engineDisplacement, TextBox engineType, TextBox fuelType, TextBox liscensePlate, TextBox name, NumericUpDown acceleration, NumericUpDown weigth, NumericUpDown topSpeed,ComboBox manufactures, ComboBox owner, string createdBy)
         {
             // Create specifications
-            string querySpecifications = $"EXEC CreateSpecification " +
-                $"@EngineType = N'{engineType.Text}', @FuelType= N'{fuelType.Text}', " +
-                $"@EngineDisplacement = N'{engineDisplacement.Text}', " +
-                $"@Weigth = {weigth.Value}, @TopSpeed = {topSpeed.Value}, @Acceleration = {acceleration.Value}";
-            var data = AppDBContext.Context.NonQuery(querySpecifications);
-            if (data == 0 || data== -1)
+            var paramSpec = new List<DbParamsSProduce> { 
+                new DbParamsSProduce("@EngineType", engineType.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@FuelType", fuelType.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@EngineDisplacement", engineDisplacement.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@Weigth", weigth.Value, SqlDbType.Decimal),
+                new DbParamsSProduce("@TopSpeed", topSpeed.Value, SqlDbType.Decimal),
+                new DbParamsSProduce("@Acceleration", acceleration.Value, SqlDbType.Decimal)
+            };
+            object data = AppDBContext.Context.ExecuteScalarProcedure(out msgError, "", "[dbo].[CreateSpecification]", paramSpec);
+            if(data == null)
             {
                 return false;
             }
+            int specId = (int)data;
+
             // Create vehicles
             var manufacture = manufactures.SelectedItem as ManufacturesDTO;
             var ownerData = owner.SelectedItem as OwnerDTO;
 
-            // Get specId
-            string queryGetSpecId = $"EXEC GetSpecificationId ";
-            var data1 = AppDBContext.Context.GetDataFromQuery(queryGetSpecId);
-            int specId = 0;
-            foreach (DataRow item in data1.Rows)
-            {
-                specId = Int32.Parse(item["SpecificationsId"].ToString());
-            }
+            var paramVehicles = new List<DbParamsSProduce> { 
+                new DbParamsSProduce("@VehicleName", name.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@LiscensePlate", liscensePlate.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@Color", color.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@ManufacturesId", manufacture.ID, SqlDbType.Int),
+                new DbParamsSProduce("@OwnerId", ownerData.ID, SqlDbType.Int),
+                new DbParamsSProduce("@SpecificationsId", specId, SqlDbType.Int),
+                new DbParamsSProduce("@CreatedBy", createdBy, SqlDbType.Int)
+            };
 
-            string queryCreateVehicles = $"EXEC CreateVehicle" +
-                $" @VehicleName = N'{name.Text}', @LiscensePlate = N'{liscensePlate.Text}', " +
-                $"@Color= N'{color.Text}', @ManufacturesId={manufacture.ID}, @OwnerId = {ownerData.ID}, @SpecificationsId = {specId}";
-            var data2 = AppDBContext.Context.NonQuery(queryCreateVehicles);
-            if (data2 == 0 || data2 == -1)
-            {
-                return false;
-            }
-
-            
-            return true;
+            int data2 = AppDBContext.Context.ExecuteNonQueryProcedure(out msgError, "", "[dbo].[CreateVehicle]", paramVehicles);
+            if(data2 >0) ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.Add, "Thêm xe " + name.Text);
+            return data2 > 0;
         }
 
-        public bool UpdateVehicles(TextBox color, TextBox engineDisplacement, TextBox engineType, TextBox fuelType, TextBox liscensePlate, TextBox name, NumericUpDown acceleration, NumericUpDown weigth, NumericUpDown topSpeed, ComboBox manufactures, ComboBox owner,TextBox id)
+        public bool UpdateVehicles(out string msgError, TextBox color, TextBox engineDisplacement, TextBox engineType, TextBox fuelType, TextBox liscensePlate, TextBox name, NumericUpDown acceleration, NumericUpDown weigth, NumericUpDown topSpeed, ComboBox manufactures, ComboBox owner,TextBox id, string updatedBy)
         {
             //Update specifications
-            string querySpecifications = $"EXEC UpdateSpecificationByVehiclesId " +
-                $"@EngineType = N'{engineType.Text}', @FuelType= N'{fuelType.Text}', " +
-                $"@EngineDisplacement = N'{engineDisplacement.Text}', @Weigth = {weigth.Value}," +
-                $" @TopSpeed = {topSpeed.Value}, @Acceleration = {acceleration.Value}," +
-                $" @VehiclesId = {id.Text}";
-            var data = AppDBContext.Context.NonQuery(querySpecifications);
+            var paramSpec = new List<DbParamsSProduce> {
+                new DbParamsSProduce("@EngineType", engineType.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@FuelType", fuelType.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@EngineDisplacement", engineDisplacement.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@Weigth", weigth.Value, SqlDbType.Decimal),
+                new DbParamsSProduce("@TopSpeed", topSpeed.Value, SqlDbType.Decimal),
+                new DbParamsSProduce("@Acceleration", acceleration.Value, SqlDbType.Decimal),
+                new DbParamsSProduce("@VehiclesId", id.Text, SqlDbType.Int)
+            };
+            int data = AppDBContext.Context.ExecuteNonQueryProcedure(out msgError, "", "[dbo].[UpdateSpecificationByVehiclesId]", paramSpec);
             if (data == 0 || data == -1)
             {
                 return false;
             }
-
             // Update vehicles
             var manufacture = manufactures.SelectedItem as ManufacturesDTO;
             var ownerData = owner.SelectedItem as OwnerDTO;
-            string queryUpdateVehicles = $"EXEC UpdateVehicles " +
-                $"@VehicleName = N'{name.Text}' , @LiscensePlate = N'{liscensePlate.Text}'," +
-                $"@Color = N'{color.Text}', @ManufacturesId = {manufacture.ID}, " +
-                $"@OwnerId = {ownerData.ID}, @VehiclesId = {id.Text}";
-            var data2 = AppDBContext.Context.NonQuery(queryUpdateVehicles);
-            if (data2 == 0 || data2 == -1)
-            {
-                return false;
-            }
-            return true;
+
+            var paramVehicles = new List<DbParamsSProduce> {
+                new DbParamsSProduce("@VehicleName", name.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@LiscensePlate", liscensePlate.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@Color", color.Text, SqlDbType.NVarChar),
+                new DbParamsSProduce("@ManufacturesId", manufacture.ID, SqlDbType.Int),
+                new DbParamsSProduce("@OwnerId", ownerData.ID, SqlDbType.Int),
+                new DbParamsSProduce("@VehiclesId", id.Text, SqlDbType.Int),
+                new DbParamsSProduce("@UpdatedBy", updatedBy, SqlDbType.Int)
+            };
+            int data2 = AppDBContext.Context.ExecuteNonQueryProcedure(out msgError, "", "[dbo].[UpdateVehicles]", paramVehicles);
+            if (data2 > 0) ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.Update, "Cập nhật xe " + name.Text);
+            return data2 > 0;
         }
 
-        public bool DeleteVehicles(string id)
+        public bool DeleteVehicles(out string msgError, string id, string updatedBy)
         {
-            string query = $"EXEC DeleteVehicleById @VehiclesId = {id}";
-            var data = AppDBContext.Context.NonQuery(query);
-            if (data == 0 || data == -1)
-            {
-                return false;
-            }
-            return true;
+            var param = new List<DbParamsSProduce> { new DbParamsSProduce("@VehiclesId", id, SqlDbType.Int), new DbParamsSProduce("@UpdatedBy", updatedBy, SqlDbType.Int) };
+            object data = AppDBContext.Context.ExecuteScalarProcedure(out msgError, "", "[dbo].[DeleteVehicleById]", param);
+            if(data != null) ActivityHistoryServices.Instance.CreateActivityHistory(Int32.Parse(RecentUser.ID), ActivityType.Delete, "Xóa xe " + data.ToString());
+            return data!=null;
         }
+
+        
     }
 }
